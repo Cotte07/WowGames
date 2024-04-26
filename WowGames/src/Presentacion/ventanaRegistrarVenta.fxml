@@ -55,7 +55,7 @@
             </TableView>
             <Label layoutX="45.0" layoutY="41.0" text="Ingrese Credencial" textFill="#f8f8f8" />
             <Label layoutX="28.0" layoutY="78.0" text="Ingrese codigo producto" textFill="#f6f3f3" />
-            <Button fx:id="ingresarBtn" layoutX="359.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onIngresarClicked" text="INGRESAR" />
+            <Button fx:id="ingresarBtn" layoutX="338.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onIngresarClicked" text="INGRESAR" />
             <Button id="regresarBtn" fx:id="regresarBtn" layoutX="490.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="REGRESAR" />
          </children>
       </AnchorPane>
@@ -70,6 +70,9 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </right>
    <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="generarFacturaBtn" layoutX="498.0" mnemonicParsing="false" onMouseClicked="#onGenerarClicked" text="Generar factura" />
+         </children></AnchorPane>
    </bottom>
 </BorderPane>
