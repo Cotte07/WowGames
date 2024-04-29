@@ -3,7 +3,7 @@ package Presentacion;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
-
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 import javafx.scene.input.MouseEvent;
@@ -37,6 +37,8 @@ public class ventanaRegistrarVentaController {
 	private Button regresarBtn;
 	@FXML
 	private Button generarFacturaBtn;
+	@FXML
+	private CheckBox descuentoBox;
 
 	// Event Listener on TableView[#registrarVentaTable].onMouseClicked
 	

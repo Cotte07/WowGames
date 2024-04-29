@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="360.0" layoutX="25.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="550.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="27.0" layoutX="56.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="104.0" />
+            <Label layoutX="63.0" layoutY="54.0" text="Codigo producto" textFill="WHITE" />
+            <TextField fx:id="codigoTxt" layoutX="160.0" layoutY="50.0" />
+            <Button fx:id="consultarBtn" layoutX="347.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#onConsultarClicked" text="Consultar" />
+            <Button fx:id="regresarBtn" layoutX="510.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="Regresar" />
+            <TableView fx:id="tablaProducto" layoutX="26.0" layoutY="100.0" prefHeight="200.0" prefWidth="547.0">
+              <columns>
+                <TableColumn fx:id="codigoColumn" prefWidth="75.0" text="Codigo producto" />
+                <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre producto" />
+                  <TableColumn fx:id="valorColumn" prefWidth="75.0" text="Valor producto" />
+                  <TableColumn fx:id="ventasMesColumn" prefWidth="75.0" text="Ventas por mes" />
+                  <TableColumn fx:id="ventasTotalesColumn" prefWidth="75.0" text="Ventas totales" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
