@@ -20,19 +20,19 @@ public class ventanaRegistrarFacturaController {
 	@FXML
 	private TextField codigoProductoTxt;
 	@FXML
-	private TableView registrarVentaTable;
+	private TableView<?> registrarVentaTable;
 	@FXML
-	private TableColumn credencialColumn;
+	private TableColumn<?, ?> credencialColumn;
 	@FXML
-	private TableColumn codigoProductoColumn;
+	private TableColumn<?, ?> codigoProductoColumn;
 	@FXML
-	private TableColumn tipoColumn;
+	private TableColumn<?, ?> tipoColumn;
 	@FXML
-	private TableColumn nombreProductoColumn;
+	private TableColumn<?, ?> nombreProductoColumn;
 	@FXML
-	private TableColumn plataformaColumn;
+	private TableColumn<?, ?> plataformaColumn;
 	@FXML
-	private TableColumn precioColumn;
+	private TableColumn<?, ?> precioColumn;
 	@FXML
 	private Button ingresarBtn;
 	@FXML
