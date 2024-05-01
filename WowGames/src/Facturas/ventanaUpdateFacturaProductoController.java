@@ -1,4 +1,4 @@
-package Presentacion;
+package Facturas;
 
 import javafx.fxml.FXML;
 

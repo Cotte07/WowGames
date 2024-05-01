@@ -1,4 +1,4 @@
-package Presentacion;
+package Vendedor;
 
 import javafx.fxml.FXML;
 
