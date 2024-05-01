@@ -4,19 +4,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.previsualizacionFacturaController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.ventanaEliminarFacturaController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5A1087;" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="350.0" layoutX="24.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="551.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="23.0" layoutX="248.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="103.0" />
-            <Label layoutX="268.0" layoutY="43.0" text="Facturacion" textFill="WHITE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="23.0" layoutX="54.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="103.0" />
+            <Label layoutX="79.0" layoutY="43.0" text="Id Factura" textFill="WHITE" />
             <TableView fx:id="tablaCliente" layoutX="54.0" layoutY="71.0" prefHeight="88.0" prefWidth="485.0">
               <columns>
+                  <TableColumn fx:id="idFacturaColumn" prefWidth="75.0" text="Id Factura" />
                 <TableColumn fx:id="nombreClienteColumn" prefWidth="75.0" text="Nombre cliente" />
                 <TableColumn fx:id="identificacionColumn" prefWidth="75.0" text="Identificacion" />
                   <TableColumn fx:id="direccionColumn" prefWidth="75.0" text="Direccion" />
@@ -34,7 +36,7 @@
                   <TableColumn fx:id="plataformaColumn" prefWidth="75.0" text="Plataforma" />
                   <TableColumn fx:id="tipoColumn" prefWidth="75.0" text="Tipo" />
                   <TableColumn fx:id="tipoProductoColumn" prefWidth="75.0" text="Tipo producto" />
-                  <TableColumn fx:id="impuestoUnitarioColumn" prefWidth="75.0" text="Impuesto Unitario" />
+                  <TableColumn fx:id="impuestoUnitarioColumn" prefWidth="75.0" text="Impuesto" />
                   <TableColumn fx:id="valorUnitarioColumn" prefWidth="75.0" text="Valor Unitario" />
               </columns>
                <columnResizePolicy>
@@ -53,9 +55,9 @@
                </columnResizePolicy>
             </TableView>
             <Button fx:id="regresarBtn" layoutX="506.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="Regresar" />
-            <Button fx:id="registrarBtn" layoutX="496.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#onRegistrarClicked" text="Registrar factura" />
-            <Button fx:id="editarClienteBtn" layoutX="14.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#onEditarClienteClicked" text="Editar datos Clientes" />
-            <Button fx:id="editarProductoBtn" layoutX="171.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#onEditarPoductoClicked" text="Editar datos Productos" />
+            <Button fx:id="eliminarBtn" layoutX="540.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#onEliminarClicked" text="Eliminar" />
+            <TextField fx:id="idFacturaTxt" layoutX="157.0" layoutY="39.0" />
+            <Button fx:id="consultarBtn" layoutX="338.0" layoutY="39.0" mnemonicParsing="false" onMouseClicked="#onConsultarClicked" text="Consultar" />
          </children>
       </AnchorPane>
    </center>
