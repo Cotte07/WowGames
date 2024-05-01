@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5A1087;" BorderPane.alignment="CENTER">
@@ -55,7 +54,8 @@
             </TableView>
             <Button fx:id="regresarBtn" layoutX="506.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="Regresar" />
             <Button fx:id="registrarBtn" layoutX="496.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#onRegistrarClicked" text="Registrar factura" />
-            <Button fx:id="editarBtn" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#onEditarClicked" text="Editar valores" />
+            <Button fx:id="editarClienteBtn" layoutX="14.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#onEditarClienteClicked" text="Editar datos Clientes" />
+            <Button fx:id="editarProductoBtn" layoutX="171.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#onEditarPoductoClicked" text="Editar datos Productos" />
          </children>
       </AnchorPane>
    </center>
