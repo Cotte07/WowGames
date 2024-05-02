@@ -40,7 +40,7 @@
             <Label layoutX="233.0" layoutY="329.0" text="Tipo Juego" textFill="#f4f4f4" />
             <Label layoutX="426.0" layoutY="280.0" text="Valor" textFill="#f4f4f4" />
             <Label layoutX="411.0" layoutY="311.0" text="Plataforma" textFill="#f4f4f4" />
-            <TableView fx:id="tablaAñadirProducto" layoutX="28.0" layoutY="57.0" prefHeight="195.0" prefWidth="545.0">
+            <TableView fx:id="tablaModificarProducto" layoutX="28.0" layoutY="57.0" prefHeight="195.0" prefWidth="545.0">
               <columns>
                 <TableColumn fx:id="referenciaColumn" prefWidth="75.0" text="Referencia" />
                 <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />

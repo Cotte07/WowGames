@@ -1,4 +1,4 @@
-package Vendedor;
+package Producto;
 
 import javafx.fxml.FXML;
 
@@ -12,23 +12,29 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
-public class ventanaConsultarVendedorController {
+public class ventanaConsultarProductoController {
 	@FXML
 	private Button regresarBtn;
 	@FXML
-	private TableView<?> tablaConsultarCliente;
+	private TableView<?> tablaConsultarProducto;
 	@FXML
-	private TableColumn<?, ?> credencialColumn;
+	private TableColumn<?, ?> referenciaColumn;
 	@FXML
 	private TableColumn<?, ?> nombreColumn;
 	@FXML
-	private TableColumn<?, ?> apellidoColumn;
+	private TableColumn<?, ?> ivaColumn;
 	@FXML
-	private TableColumn<?, ?> identificacionColumn;
+	private TableColumn<?, ?> tipoProductoColumn;
 	@FXML
-	private TableColumn<?, ?> tipoIdColumn;
+	private TableColumn<?, ?> impuestoColumn;
 	@FXML
-	private TextField credencialBuscarTxt;
+	private TableColumn<?, ?> tipoJuegoColumn;
+	@FXML
+	private TableColumn<?, ?> valorColumn;
+	@FXML
+	private TableColumn<?, ?> plataformaColumn;
+	@FXML
+	private TextField referenciaBuscarTxt;
 	@FXML
 	private Button consultarBtn;
 

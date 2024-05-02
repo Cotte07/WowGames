@@ -16,7 +16,7 @@ public class ventanaEliminarVendedorController {
 	@FXML
 	private Button regresarBtn;
 	@FXML
-	private TableView<?> tablaAñadirCliente;
+	private TableView<?> tablaEliminarCliente;
 	@FXML
 	private TableColumn<?, ?> credencialColumn;
 	@FXML
