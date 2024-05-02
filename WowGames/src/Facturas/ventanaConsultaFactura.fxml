@@ -19,8 +19,8 @@
             <TableView fx:id="tablaCliente" layoutX="54.0" layoutY="71.0" prefHeight="88.0" prefWidth="485.0">
               <columns>
                   <TableColumn fx:id="idFacturaColumn" prefWidth="75.0" text="Id Factura" />
-                <TableColumn fx:id="nombreClienteColumn" prefWidth="75.0" text="Nombre cliente" />
-                <TableColumn fx:id="identificacionColumn" prefWidth="75.0" text="Identificacion" />
+                <TableColumn fx:id="nombreClienteColumn" prefWidth="70.66668701171875" text="Cliente" />
+                <TableColumn fx:id="identificacionColumn" prefWidth="90.6666259765625" text="Identificacion" />
                   <TableColumn fx:id="direccionColumn" prefWidth="75.0" text="Direccion" />
                   <TableColumn fx:id="telefonoColumn" prefWidth="75.0" text="Telefono" />
                   <TableColumn fx:id="vendedorColumn" prefWidth="75.0" text="Vendedor" />

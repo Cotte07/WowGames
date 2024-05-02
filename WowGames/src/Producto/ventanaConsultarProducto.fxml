@@ -31,7 +31,7 @@
                </columnResizePolicy>
             </TableView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="50.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
-            <TextField fx:id="referenciaBuscarTxt" layoutX="138.0" layoutY="26.0" prefHeight="25.0" prefWidth="75.0" />
+            <TextField fx:id="referenciaTxt" layoutX="138.0" layoutY="26.0" prefHeight="25.0" prefWidth="75.0" />
             <Label layoutX="66.0" layoutY="30.0" text="Referencia" textFill="#f4f4f4" />
             <Button fx:id="consultarBtn" layoutX="261.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#onConsultarClicked" text="Consultar" />
          </children>

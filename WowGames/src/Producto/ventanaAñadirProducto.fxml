@@ -21,7 +21,7 @@
             <TextField fx:id="nombreTxt" layoutX="124.0" layoutY="295.0" prefHeight="25.0" prefWidth="75.0" />
             <TextField fx:id="ivaTxt" layoutX="124.0" layoutY="325.0" prefHeight="25.0" prefWidth="76.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="266.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
-            <TextField fx:id="tipoProducto" layoutX="300.0" layoutY="264.0" prefHeight="25.0" prefWidth="77.0" />
+            <TextField fx:id="tipoProductoTxt" layoutX="300.0" layoutY="264.0" prefHeight="25.0" prefWidth="77.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="297.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
             <TextField fx:id="impuestoTxt" layoutX="301.0" layoutY="295.0" prefHeight="25.0" prefWidth="78.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />

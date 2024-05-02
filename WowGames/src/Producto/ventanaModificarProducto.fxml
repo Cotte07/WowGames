@@ -14,32 +14,29 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="356.0" layoutX="26.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="549.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="36.0" layoutY="266.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="36.0" layoutY="297.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="36.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
-            <TextField fx:id="referenciaTxt" layoutX="124.0" layoutY="264.0" prefHeight="25.0" prefWidth="75.0" />
             <TextField fx:id="nombreTxt" layoutX="124.0" layoutY="295.0" prefHeight="25.0" prefWidth="75.0" />
             <TextField fx:id="ivaTxt" layoutX="124.0" layoutY="325.0" prefHeight="25.0" prefWidth="76.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="266.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
-            <TextField fx:id="tipoProducto" layoutX="300.0" layoutY="264.0" prefHeight="25.0" prefWidth="77.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="34.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+            <TextField fx:id="tipoProducto" layoutX="123.0" layoutY="264.0" prefHeight="25.0" prefWidth="77.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="297.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
             <TextField fx:id="impuestoTxt" layoutX="301.0" layoutY="295.0" prefHeight="25.0" prefWidth="78.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
             <TextField fx:id="tipoJuegoTxt" layoutX="301.0" layoutY="325.0" prefHeight="25.0" prefWidth="78.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="402.0" layoutY="277.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
-            <TextField fx:id="valorTxt" layoutX="478.0" layoutY="274.0" prefHeight="25.0" prefWidth="75.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="402.0" layoutY="308.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
-            <TextField fx:id="plataformaTxt" layoutX="478.0" layoutY="305.0" prefHeight="25.0" prefWidth="75.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="224.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
+            <TextField fx:id="valorTxt" layoutX="302.0" layoutY="264.0" prefHeight="25.0" prefWidth="75.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="402.0" layoutY="267.0" stroke="BLACK" strokeType="INSIDE" width="76.0" />
+            <TextField fx:id="plataformaTxt" layoutX="474.0" layoutY="265.0" prefHeight="25.0" prefWidth="75.0" />
             <Button fx:id="regresarBtn" layoutX="512.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="Regresar" />
-            <Button fx:id="modificarBtn" layoutX="452.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#onModificarClicked" text="Modificar" />
-            <Label layoutX="52.0" layoutY="268.0" text="Referencia" textFill="#f4f4f4" />
+            <Button fx:id="modificarBtn" layoutX="445.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#onModificarClicked" text="Modificar" />
             <Label layoutX="58.0" layoutY="299.0" text="Nombre" textFill="#f4f4f4" />
             <Label layoutX="72.0" layoutY="329.0" text="Iva" textFill="#f4f4f4" />
-            <Label layoutX="224.0" layoutY="268.0" text="Tipo Producto" textFill="#f4f4f4" />
+            <Label layoutX="40.0" layoutY="269.0" text="Tipo Producto" textFill="#f4f4f4" />
             <Label layoutX="237.0" layoutY="296.0" text="Impuesto" textFill="#f4f4f4" />
             <Label layoutX="233.0" layoutY="329.0" text="Tipo Juego" textFill="#f4f4f4" />
-            <Label layoutX="426.0" layoutY="280.0" text="Valor" textFill="#f4f4f4" />
-            <Label layoutX="411.0" layoutY="311.0" text="Plataforma" textFill="#f4f4f4" />
+            <Label layoutX="248.0" layoutY="269.0" text="Valor" textFill="#f4f4f4" />
+            <Label layoutX="411.0" layoutY="269.0" text="Plataforma" textFill="#f4f4f4" />
             <TableView fx:id="tablaModificarProducto" layoutX="28.0" layoutY="57.0" prefHeight="195.0" prefWidth="545.0">
               <columns>
                 <TableColumn fx:id="referenciaColumn" prefWidth="75.0" text="Referencia" />
