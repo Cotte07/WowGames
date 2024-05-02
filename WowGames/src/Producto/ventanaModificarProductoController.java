@@ -34,7 +34,7 @@ public class ventanaModificarProductoController {
 	@FXML
 	private Button modificarBtn;
 	@FXML
-	private TableView<?> tablaAñadirProducto;
+	private TableView<?> tablaModificarProducto;
 	@FXML
 	private TableColumn<?, ?> referenciaColumn;
 	@FXML
