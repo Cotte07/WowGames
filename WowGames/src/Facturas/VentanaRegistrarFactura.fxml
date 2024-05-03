@@ -15,10 +15,8 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="348.0" layoutX="23.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="553.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="29.0" layoutX="35.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="116.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="29.0" layoutX="28.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" width="132.0" />
-            <TextField fx:id="credencialTxt" layoutX="168.0" layoutY="37.0" />
-            <TextField fx:id="codigoProductoTxt" layoutX="168.0" layoutY="74.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="29.0" layoutX="27.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="132.0" />
+            <TextField fx:id="codigoProductoTxt" layoutX="167.0" layoutY="50.0" />
             <TableView fx:id="registrarVentaTable" editable="true" layoutX="25.0" layoutY="108.0" onMouseClicked="#onSelection" prefHeight="263.0" prefWidth="548.0">
               <columns>
                 <TableColumn fx:id="credencialColumn" prefWidth="75.0" text="Credencial" />
@@ -32,8 +30,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Label layoutX="38.0" layoutY="41.0" text="Credencial vendedor" textFill="#f8f8f8" />
-            <Label layoutX="39.0" layoutY="78.0" text="Referencia producto" textFill="#f6f3f3" />
+            <Label layoutX="39.0" layoutY="54.0" text="Referencia producto" textFill="#f6f3f3" />
             <Button fx:id="ingresarBtn" layoutX="338.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onIngresarClicked" text="INGRESAR" />
             <Button id="regresarBtn" fx:id="regresarBtn" layoutX="490.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="REGRESAR" />
             <CheckBox fx:id="descuentoBox" layoutX="417.0" layoutY="63.0" mnemonicParsing="false" text="Descuento" />

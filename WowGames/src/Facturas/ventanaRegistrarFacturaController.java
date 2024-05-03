@@ -16,8 +16,6 @@ import javafx.scene.control.TableColumn;
 
 public class ventanaRegistrarFacturaController {
 	@FXML
-	private TextField credencialTxt;
-	@FXML
 	private TextField codigoProductoTxt;
 	@FXML
 	private TableView<?> registrarVentaTable;
