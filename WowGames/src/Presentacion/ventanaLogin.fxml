@@ -14,7 +14,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4145" height="35.0" layoutX="240.0" layoutY="105.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
-            <TextField fx:id="usuarioTxt" layoutX="241.0" layoutY="149.0" prefHeight="21.0" prefWidth="117.0" style="-fx-background-color: #ffffff;" />
+            <TextField fx:id="credencialTxt" layoutX="241.0" layoutY="149.0" prefHeight="21.0" prefWidth="117.0" style="-fx-background-color: #ffffff;" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" stroke="BLACK" strokeType="INSIDE" width="189.0" />
             <ImageView fitHeight="94.0" fitWidth="111.0" layoutX="33.0" layoutY="-19.0">
                <image>
@@ -44,7 +44,7 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4145" height="38.0" layoutX="240.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
-            <TextField fx:id="credencialTxt" layoutX="241.0" layoutY="68.0" prefHeight="13.0" prefWidth="117.0" style="-fx-background-color: #ffffff;" />
+            <TextField fx:id="contrasenaTxt" layoutX="241.0" layoutY="68.0" prefHeight="13.0" prefWidth="117.0" style="-fx-background-color: #ffffff;" />
             <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="23.0" layoutY="-32.0">
                <image>
                   <Image url="@../../../../../Escritorio/imagenes%20proyecto%20integrador/1f47e.png" />
