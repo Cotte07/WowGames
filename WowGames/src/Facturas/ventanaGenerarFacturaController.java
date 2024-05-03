@@ -25,7 +25,8 @@ public class ventanaGenerarFacturaController {
 	private Button registrarBtn;
 	@FXML
 	private Button regresarBtn;
-
+	
+	
 	// Event Listener on Button[#registrarBtn].onMouseClicked
 	@FXML
 	public void onRegistrarBtn(MouseEvent event) {

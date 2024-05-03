@@ -21,16 +21,17 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="75.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="75.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Label layoutX="85.0" layoutY="61.0" text="Nombre Cliente*" textFill="WHITE" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="344.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="344.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="362.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="362.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Label layoutX="85.0" layoutY="143.0" text="Apellido Cliente*" textFill="WHITE" />
-            <Label layoutX="371.0" layoutY="60.0" text="Direccion*" textFill="WHITE" />
-            <Label layoutX="381.0" layoutY="143.0" text="Fecha*" textFill="WHITE" />
+            <Label layoutX="390.0" layoutY="61.0" text="Direccion*" textFill="WHITE" />
+            <Label layoutX="399.0" layoutY="143.0" text="Fecha*" textFill="WHITE" />
             <TextField fx:id="nombreTxt" layoutX="55.0" layoutY="85.0" />
-            <TextField fx:id="direccionTxt" layoutX="324.0" layoutY="85.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="220.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Label layoutX="244.0" layoutY="21.0" text="Facturacion" textFill="WHITE" />
+            <TextField fx:id="direccionTxt" layoutX="342.0" layoutY="85.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="193.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
+            <Label layoutX="214.0" layoutY="24.0" prefHeight="17.0" prefWidth="142.0" text="Regisrtar: Datos cliente" textFill="WHITE" />
             <Button fx:id="regresarBtn" layoutX="484.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="Regresar" />
+            <TextField fx:id="fechaTxt" layoutX="342.0" layoutY="164.0" />
          </children>
       </AnchorPane>
    </center>
@@ -41,14 +42,13 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="101.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="370.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Label layoutX="111.0" layoutY="54.0" text="Identificacion/Nit*" textFill="WHITE" />
-            <Label layoutX="399.0" layoutY="54.0" text="Telefono*" textFill="WHITE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="390.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Label fx:id="IdentificacionTxt" layoutX="111.0" layoutY="54.0" text="Identificacion/Nit*" textFill="WHITE" />
+            <Label layoutX="419.0" layoutY="54.0" text="Telefono*" textFill="WHITE" />
             <TextField fx:id="apellidoTxt" layoutX="82.0" layoutY="-12.0" />
             <TextField fx:id="identificacionTxt" layoutX="82.0" layoutY="78.0" />
-            <TextField fx:id="fechaTxt" layoutX="351.0" layoutY="-12.0" />
-            <TextField fx:id="telefonoTxt" layoutX="351.0" layoutY="79.0" />
-            <Button fx:id="registrarBtn" layoutX="251.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#onRegistrarBtn" text="Registrar Venta" />
+            <TextField fx:id="telefonoTxt" layoutX="370.0" layoutY="78.0" />
+            <Button fx:id="registrarBtn" layoutX="251.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#onRegistrarBtn" text="Registrar Factura" textFill="#280b6e" />
          </children>
       </AnchorPane>
    </bottom>
