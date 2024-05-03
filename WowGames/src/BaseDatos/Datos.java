@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class Datos {
 
-	private String conectionstr = "jdbc:oracle:thin:@localhost:8080:orcl";
+	private String conectionstr = "jdbc:oracle:thin:@localhost:orcl";
 	private String username = "proyecto";
 	private String password = "proyecto";
 	
@@ -29,7 +29,7 @@ public class Datos {
 		Vendedores user=null;
 		Connection conn = this.getConnection();
 		try {
-			String query = "select * from vendedor where credencial=? and contrasena=?";
+			String query = "select * from vendedor where credencial=? and contrasenavendedor=?";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, credencial);
 			st.setString(2, contrasena);
