@@ -71,7 +71,17 @@ public class ventanaGenerarFacturaController {
 	
 	@FXML
     public void onGenerarClicked(MouseEvent event) {
-		
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("/Facturas/VentanaRegistrarFactura.fxml"));
+			Scene scene = new Scene(root);
+			Stage st = new Stage();
+			st.setScene(scene);
+			st.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 
 	}
