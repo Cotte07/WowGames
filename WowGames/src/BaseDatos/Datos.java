@@ -173,12 +173,12 @@ import java.util.LinkedList;
 		boolean success = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, producto.getIva());
+			st.setFloat(1, producto.getIva());
 			st.setString(2, producto.getTipoProducto());
 			st.setString(3, producto.getTipoJuego());
 			st.setString(4, producto.getNombre());
-			st.setString(5, producto.getValorUnitario());
-			st.setString(6, producto.getImpuesto());
+			st.setFloat(5, producto.getValorUnitario());
+			st.setFloat(6, producto.getImpuesto());
 			st.setString(7, producto.getPlataforma());
 			st.setString(8, producto.getReferencia());
 			st.executeUpdate();
