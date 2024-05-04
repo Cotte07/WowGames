@@ -2,26 +2,32 @@ package Producto;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.ResourceBundle;
 
 import BaseDatos.Datos;
 import BaseDatos.Clientes;
 import BaseDatos.Productos;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
-
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
-public class ventanaAñadirProductoController {
+public class ventanaAñadirProductoController implements Initializable{
 	@FXML
 	private TextField referenciaTxt;
 	@FXML
@@ -62,6 +68,7 @@ public class ventanaAñadirProductoController {
 	private TableColumn<Productos, String> plataformaColumn;
 	
 	private Datos dataProvider = new Datos();
+	private ObservableList<Productos> data = FXCollections.observableArrayList();
 
 	// Event Listener on Button[#regresarBtn].onMouseClicked
 	@FXML
@@ -107,4 +114,22 @@ public class ventanaAñadirProductoController {
 		
 	}
 }
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		this.referenciaColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("referencia"));
+		this.ivaColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("iva"));
+		this.tipoProductoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("tipoProducto"));
+		this.tipoJuegoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("tipoJuego"));
+		this.nombreColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("nombre"));
+		this.valorColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("valorUnitario"));
+		this.impuestoColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("impuesto"));
+		this.plataformaColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("plataforma"));
+		LinkedList<Productos> temp = this.dataProvider.getDatos();
+		for(Productos item: temp) {
+			this.data.add(item);
+		}
+		this.tablaAñadirProducto.setItems(data);
+		
+	}
 }

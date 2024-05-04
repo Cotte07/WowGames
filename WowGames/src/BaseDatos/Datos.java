@@ -8,11 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
+
+
  public class Datos {
 
-	private String conectionstr = "jdbc:oracle:thin:@192.168.1.6:1521";
-	private String username = "wow";
-	private String password = "wowgames";
+	private String conectionstr = "jdbc:oracle:thin:@192.168.80.18:1521";
+	private String username = "proyecto";
+	private String password = "proyecto";
 	
 	public Connection getConnection() {
 		Connection conn = null;
@@ -134,10 +136,7 @@ import java.util.LinkedList;
 		Statement st;
 		try {
 			st = conn.createStatement();
-			String query = "select * from producto where referencia=?";
-			PreparedStatement st1 = conn.prepareStatement(query);
-			String referencia = null;
-			st1.setString(1, referencia);
+			String query = "select * from producto";
 			ResultSet result = st.executeQuery(query);
 			while(result.next()) {
 				data.add(new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8)));
@@ -150,22 +149,25 @@ import java.util.LinkedList;
 		return data;
 	}
 	
-	public Productos consulta(String referencia) {
-		Productos producto = null;
+	public boolean deleteProducto(Productos producto) {
 		Connection conn = this.getConnection();
+		String query = "DELETE FROM producto WHERE referencia=?";
+		boolean success = false;
 		try {
-			String query = "select * from producto where referencia=?";
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, referencia);
-			ResultSet result = st.executeQuery();
-			while(result.next()) {
-				producto=new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8));
-			}
+			st.setString(1, producto.getReferencia());
+			st.executeUpdate();
+			success = true;
+			
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return producto;
+		return success;
+	}
+	
+	public void modificarProducto(Productos producto) {
 		
 	}
 	
@@ -183,12 +185,56 @@ import java.util.LinkedList;
 			st.setString(6, Cliente.getTelefono());
 			st.executeUpdate();
 			success = true;
-			
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return success;
+		}
+
+	public boolean createVendedor (Vendedores vendedor) {
+		Connection conn = this.getConnection();
+		String query = "INSERT INTO vendedor VALUES(?,?,?,?,?,?)";
+		boolean successAñadirVendedor = false;
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, vendedor.getCredencial());
+			st.setString(2, vendedor.getId());
+			st.setString(3, vendedor.getNombre());
+			st.setString(4, vendedor.getApellido());
+			st.setString(5, vendedor.getFechaIngreso());
+			st.setString(6, vendedor.getContrasena());
+			st.executeUpdate();
+			successAñadirVendedor = true;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+
+		return successAñadirVendedor;
 	}
+	
+	public LinkedList<Vendedores> getDatosVendedor(){
+		LinkedList<Vendedores> data = new LinkedList<Vendedores>();
+		Connection conn = this.getConnection();
+		Statement st;
+		try {
+			st = conn.createStatement();
+			String query = "select * from vendedor";
+			ResultSet result = st.executeQuery(query);
+			while(result.next()) {
+				data.add(new Vendedores(result.getString(1), result.getString(2), result.getString(3), result.getString(4), result.getString(5), result.getString(6)));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return data;
+	
+
 }
+ }

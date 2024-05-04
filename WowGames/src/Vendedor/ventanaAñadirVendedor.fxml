@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.ventanaAñadirVendedorController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vendedor.ventanaAñadirVendedorController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,8 @@
                 <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />
                   <TableColumn fx:id="apellidoColumn" prefWidth="75.0" text="Apellido" />
                   <TableColumn fx:id="identificacionColumn" prefWidth="75.0" text="Identificacion" />
-                  <TableColumn fx:id="tipoIdColumn" prefWidth="75.0" text="Tipo Id" />
+                  <TableColumn fx:id="fechaColumn" prefWidth="75.0" text="Fecha ingreso" />
+                  <TableColumn fx:id="contraseñaColumn" prefWidth="75.0" text="Contraseña" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -32,17 +33,20 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="43.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
             <Label layoutX="68.0" layoutY="312.0" text="Nombre" textFill="WHITE" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="43.0" layoutY="346.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="260.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="260.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="261.0" layoutY="346.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="260.0" layoutY="277.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
             <TextField fx:id="credencialTxt" layoutX="137.0" layoutY="275.0" prefHeight="25.0" prefWidth="97.0" />
             <TextField fx:id="nombreTxt" layoutX="137.0" layoutY="308.0" prefHeight="25.0" prefWidth="97.0" />
             <TextField fx:id="apellidoTxt" layoutX="137.0" layoutY="344.0" prefHeight="25.0" prefWidth="97.0" />
-            <TextField fx:id="identificacionTxt" layoutX="354.0" layoutY="291.0" prefHeight="25.0" prefWidth="97.0" />
-            <TextField fx:id="tipoIdTxt" layoutX="354.0" layoutY="331.0" prefHeight="25.0" prefWidth="97.0" />
+            <TextField fx:id="identificacionTxt" layoutX="354.0" layoutY="275.0" prefHeight="25.0" prefWidth="97.0" />
+            <TextField fx:id="contraseñaTxt" layoutX="354.0" layoutY="344.0" prefHeight="25.0" prefWidth="97.0" />
             <Label layoutX="68.0" layoutY="346.0" text="Apellido" textFill="WHITE" />
-            <Label layoutX="271.0" layoutY="295.0" text="Identificacion" textFill="WHITE" />
-            <Label layoutX="288.0" layoutY="337.0" text="Tipo Id" textFill="WHITE" />
+            <Label layoutX="272.0" layoutY="279.0" text="Identificacion" textFill="WHITE" />
+            <Label layoutX="279.0" layoutY="348.0" text="Contraseña" textFill="WHITE" />
             <Button fx:id="añadirBtn" layoutX="488.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#onAñadirClicked" text="Añadir" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="21.0" layoutX="262.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="94.0" />
+            <Label layoutX="293.0" layoutY="312.0" text="Fecha" textFill="WHITE" />
+            <TextField fx:id="fechaTxt" layoutX="356.0" layoutY="308.0" prefHeight="25.0" prefWidth="95.0" />
          </children>
       </AnchorPane>
    </center>
