@@ -6,7 +6,7 @@ import BaseDatos.Clientes;
 import BaseDatos.Datos;
 import BaseDatos.Facturas;
 import MostrarVentanas.MostrarVentanaOpciones;
-import MostrarVentanas.loadRegistrarFactura;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -48,7 +48,7 @@ public class ventanaGenerarFacturaController {
 	private Float idFac = null;
 	float id;
 	int i = 1;
-	private loadRegistrarFactura lnu;
+	
 
 	// Event Listener on Button[#registrarBtn].onMouseClicked
 	@FXML

@@ -10,4 +10,5 @@ module WowGames {
 	opens Producto to javafx.graphics, javafx.fxml, javafx.base;
 	opens Vendedor to javafx.graphics, javafx.fxml, javafx.base;
 	opens MostrarVentanas to javafx.graphics, javafx.fxml, javafx.base;
+	opens BaseDatos to javafx.graphics, javafx.fxml, javafx.base;
 }

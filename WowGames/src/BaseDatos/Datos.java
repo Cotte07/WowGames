@@ -5,6 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+
+
+
+
 
 
 
@@ -12,9 +18,9 @@ import java.sql.SQLException;
 
 public class Datos {
 
-	private String conectionstr = "jdbc:oracle:thin:@192.168.1.6:1521";
-	private String username = "wow";
-	private String password = "wowgames";
+	private String conectionstr = "jdbc:oracle:thin:@192.168.80.18:1521";
+	private String username = "proyecto";
+	private String password = "proyecto";
 	
 	public Connection getConnection() {
 		Connection conn = null;
@@ -101,5 +107,73 @@ public class Datos {
 		Connection conn = this.getConnection();
 		String query = "SELECT id FROM factura WHERE id = (SELECT MAX(id) FROM factura)(?)";
 		return consultarId;
+	}
+	
+	
+	public boolean createProducto(Productos Producto) {
+		Connection conn = this.getConnection();
+		String query = "INSERT INTO producto VALUES(?,?,?,?,?,?,?,?)";
+		boolean successAñadirProducto = false;
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, Producto.getReferencia());
+			st.setInt(2, Producto.getIva());
+			st.setString(3, Producto.getTipoProducto());
+			st.setString(4, Producto.getTipoJuego());
+			st.setString(5, Producto.getNombre());
+			st.setInt(6, Producto.getValorUnitario());
+			st.setInt(7, Producto.getImpuesto());
+			st.setString(8, Producto.getPlataforma());
+			st.executeUpdate();
+			successAñadirProducto = true;
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return successAñadirProducto;
+	}
+	
+	
+	public LinkedList<Productos> getDatos(){
+		LinkedList<Productos> data = new LinkedList<Productos>();
+		Connection conn = this.getConnection();
+		Statement st;
+		try {
+			st = conn.createStatement();
+			String query = "select * from producto where referencia=?";
+			PreparedStatement st1 = conn.prepareStatement(query);
+			String referencia = null;
+			st1.setString(1, referencia);
+			ResultSet result = st.executeQuery(query);
+			while(result.next()) {
+				data.add(new Productos(result.getString(1), result.getInt(2), result.getString(3), result.getString(4), result.getString(5), result.getInt(6), result.getInt(7), result.getString(8)));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return data;
+	}
+	
+	public Productos consulta(String referencia) {
+		Productos producto = null;
+		Connection conn = this.getConnection();
+		try {
+			String query = "select * from producto where referencia=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, referencia);
+			ResultSet result = st.executeQuery();
+			while(result.next()) {
+				producto=new Productos(result.getString(1), result.getInt(2), result.getString(3), result.getString(4), result.getString(5), result.getInt(6), result.getInt(7), result.getString(8));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return producto;
+		
 	}
 }

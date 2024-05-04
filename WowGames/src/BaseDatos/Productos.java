@@ -2,15 +2,15 @@ package BaseDatos;
 
 public class Productos {
 	private String referencia;
-	private Float iva;
+	private int iva;
 	private String tipoProducto;
 	private String tipoJuego;
 	private String nombre;
-	private Float valorUnitario;
-	private Float impuesto;
+	private int valorUnitario;
+	private int impuesto;
 	private String plataforma;
 	
-	public void Producto(String referencia, Float iva, String tipoProducto, String tipoJuego, String nombre, Float valorUnitario, Float impuesto, String plataforma) {
+	public Productos (String referencia, int iva, String tipoProducto, String tipoJuego, String nombre, int valorUnitario, int impuesto, String plataforma) {
 		this.referencia = referencia;
 		this.iva = iva;
 		this.tipoProducto = tipoProducto;
@@ -29,11 +29,11 @@ public class Productos {
 		this.referencia = referencia;
 	}
 
-	public Float getIva() {
+	public int getIva() {
 		return iva;
 	}
 
-	public void setIva(Float iva) {
+	public void setIva(int iva) {
 		this.iva = iva;
 	}
 
@@ -61,19 +61,19 @@ public class Productos {
 		this.nombre = nombre;
 	}
 
-	public Float getValorUnitario() {
+	public int getValorUnitario() {
 		return valorUnitario;
 	}
 
-	public void setValorUnitario(Float valorUnitario) {
+	public void setValorUnitario(int valorUnitario) {
 		this.valorUnitario = valorUnitario;
 	}
 
-	public Float getImpuesto() {
+	public int getImpuesto() {
 		return impuesto;
 	}
 
-	public void setImpuesto(Float impuesto) {
+	public void setImpuesto(int impuesto) {
 		this.impuesto = impuesto;
 	}
 
