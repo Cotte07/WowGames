@@ -8,19 +8,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
+ public class Datos {
 
-
-
-
-
-
-
-
-public class Datos {
-
-	private String conectionstr = "jdbc:oracle:thin:@192.168.80.18:1521";
-	private String username = "proyecto";
-	private String password = "proyecto";
+	private String conectionstr = "jdbc:oracle:thin:@192.168.1.6:1521";
+	private String username = "wow";
+	private String password = "wowgames";
 	
 	public Connection getConnection() {
 		Connection conn = null;
@@ -79,7 +71,7 @@ public class Datos {
 	
 	public boolean createFactura(Facturas factura) {
 		Connection conn = this.getConnection();
-		String query = "INSERT INTO cliente VALUES(?,?,?,?,?,?,?)";
+		String query = "INSERT INTO factura VALUES(?,?,?,?,?,?,?)";
 		boolean success1 = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
@@ -117,12 +109,12 @@ public class Datos {
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, Producto.getReferencia());
-			st.setInt(2, Producto.getIva());
+			st.setFloat(2, Producto.getIva());
 			st.setString(3, Producto.getTipoProducto());
 			st.setString(4, Producto.getTipoJuego());
 			st.setString(5, Producto.getNombre());
-			st.setInt(6, Producto.getValorUnitario());
-			st.setInt(7, Producto.getImpuesto());
+			st.setFloat(6, Producto.getValorUnitario());
+			st.setFloat(7, Producto.getImpuesto());
 			st.setString(8, Producto.getPlataforma());
 			st.executeUpdate();
 			successAñadirProducto = true;
@@ -148,7 +140,7 @@ public class Datos {
 			st1.setString(1, referencia);
 			ResultSet result = st.executeQuery(query);
 			while(result.next()) {
-				data.add(new Productos(result.getString(1), result.getInt(2), result.getString(3), result.getString(4), result.getString(5), result.getInt(6), result.getInt(7), result.getString(8)));
+				data.add(new Productos(result.getString(1), result.getString(2), result.getFloat(3), result.getString(4), result.getFloat(5), result.getString(6), result.getFloat(7), result.getString(8)));
 				
 			}
 		} catch (SQLException e) {
@@ -167,7 +159,7 @@ public class Datos {
 			st.setString(1, referencia);
 			ResultSet result = st.executeQuery();
 			while(result.next()) {
-				producto=new Productos(result.getString(1), result.getInt(2), result.getString(3), result.getString(4), result.getString(5), result.getInt(6), result.getInt(7), result.getString(8));
+				producto=new Productos(result.getString(1), result.getString(2), result.getFloat(3), result.getString(4), result.getFloat(5), result.getString(6), result.getFloat(7), result.getString(8));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
