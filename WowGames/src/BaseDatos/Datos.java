@@ -167,9 +167,29 @@ import java.util.LinkedList;
 		return success;
 	}
 	
-	public void modificarProducto(Productos producto) {
-		
-	}
+	public boolean modificarProducto(Productos producto) {
+		Connection conn = this.getConnection();
+		String query = "update producto set Iva=?, TipoProducto=?, TipoJuego=?, Nombre=?, ValorUnitario=?, Impuesto=?, Platorma=? where referencia=?";
+		boolean success = false;
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, producto.getIva());
+			st.setString(2, producto.getTipoProducto());
+			st.setString(3, producto.getTipoJuego());
+			st.setString(4, producto.getNombre());
+			st.setString(5, producto.getValorUnitario());
+			st.setString(6, producto.getImpuesto());
+			st.setString(7, producto.getPlataforma());
+			st.setString(8, producto.getReferencia());
+			st.executeUpdate();
+			success = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return success;
+		}
+	
 	
 	public boolean updateCliente(Clientes Cliente) {
 		Connection conn = this.getConnection();
