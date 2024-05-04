@@ -1,15 +1,23 @@
 package Facturas;
 
+import java.io.IOException;
+
 import BaseDatos.Clientes;
 import BaseDatos.Datos;
 import BaseDatos.Facturas;
+import MostrarVentanas.MostrarVentanaOpciones;
+import MostrarVentanas.loadRegistrarFactura;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
 
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class ventanaGenerarFacturaController {
 	@FXML
@@ -40,6 +48,7 @@ public class ventanaGenerarFacturaController {
 	private Float idFac = null;
 	float id;
 	int i = 1;
+	private loadRegistrarFactura lnu;
 
 	// Event Listener on Button[#registrarBtn].onMouseClicked
 	@FXML
@@ -61,41 +70,14 @@ public class ventanaGenerarFacturaController {
 	}
 	
 	@FXML
-    void onGenerarClicked(MouseEvent event) {
-		
-		if(idFac == null) {
-			idFac = (float) 1;
-		}else {
-			Datos datos = new Datos(); 
-	        Facturas resultado = null;
-	        resultado = datos.consultarId(resultado);
-	        
-	        id = resultado.getId() + 1; 
-	        idFac = id;
-		}
-			
+    public void onGenerarClicked(MouseEvent event) {
 		
 		
-		
-		Facturas nuevo = new Facturas(idFac, fechaTxt.getText(), subTotal, valorTotal, descuento, credencialTxt.getText(), identificacionTxt.getText());
-		boolean success = this.dataProvider.createFactura(nuevo);
-		if (success) {
-			Alert alt = new Alert(Alert.AlertType.INFORMATION);
-			alt.setContentText("Usuario Creado");
-			alt.setHeaderText("Creado");
-			alt.show();
-		}else {
-			Alert alt = new Alert(Alert.AlertType.ERROR);
-			alt.setContentText("Error Creando el usuario");
-			alt.setHeaderText("error");
-			alt.show();
-		}
 
-    }
-	
+	}
 	
 	@FXML
-    void onRegresarClicked(MouseEvent event) {
+    public void onRegresarClicked(MouseEvent event) {
 
     }
 }

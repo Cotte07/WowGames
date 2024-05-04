@@ -74,7 +74,7 @@ public class Datos {
 	public boolean createFactura(Facturas factura) {
 		Connection conn = this.getConnection();
 		String query = "INSERT INTO cliente VALUES(?,?,?,?,?,?,?)";
-		boolean success = false;
+		boolean success1 = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setFloat(1, factura.getId());
@@ -85,14 +85,14 @@ public class Datos {
 			st.setString(6, factura.getCredencialVendedor());
 			st.setString(7, factura.getIdentificacionCliente());
 			st.executeUpdate();
-			success = true;
+			success1 = true;
 			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return success;
+		return success1;
 	}
 	
 	
