@@ -234,7 +234,25 @@ import java.util.LinkedList;
 			e.printStackTrace();
 		}
 		return data;
-	
 
 }
+	
+	public boolean deleteVendedor(Vendedores Vendedor) {
+		Connection conn = this.getConnection();
+		String query = "DELETE FROM vendedor WHERE credencial=?";
+		boolean success = false;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, Vendedor.getCredencial());
+			st.executeUpdate();
+			success = true;
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return success;
+	}
  }
