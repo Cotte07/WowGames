@@ -168,4 +168,27 @@ import java.util.LinkedList;
 		return producto;
 		
 	}
+	
+	public boolean updateCliente(Clientes Cliente) {
+		Connection conn = this.getConnection();
+		String query = "update cliente set Identificacion=?, Nombre=?, Apellido=?, FechaRegistro=?, Direccion=?, Telefono=?";
+		boolean success = false;
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, Cliente.getIdentificacion());
+			st.setString(2, Cliente.getNombre());
+			st.setString(3, Cliente.getApellido());
+			st.setString(4, Cliente.getFechaRegistro());
+			st.setString(5, Cliente.getDireccion());
+			st.setString(6, Cliente.getTelefono());
+			st.executeUpdate();
+			success = true;
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return success;
+	}
 }
