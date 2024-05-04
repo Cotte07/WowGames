@@ -8,7 +8,7 @@ public class Clientes {
 	private String direccion;
 	private String telefono;
 	
-	public  Clientes (String identificacion, String direccion, String nombre, String apellido, String fechaRegistro, String telefono) {
+	public  Clientes (String identificacion, String nombre, String apellido, String fechaRegistro, String direccion, String telefono) {
 		
 		this.identificacion = identificacion;
 		this.nombre = nombre;

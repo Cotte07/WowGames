@@ -20,10 +20,9 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="350.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="550.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="75.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="75.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Label layoutX="85.0" layoutY="143.0" text="Nombre Cliente*" textFill="WHITE" />
+            <Label layoutX="85.0" layoutY="61.0" text="Nombre Cliente*" textFill="WHITE" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="362.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="362.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Label layoutX="399.0" layoutY="61.0" text="Fecha*" textFill="WHITE" />
             <TextField fx:id="nombreTxt" layoutX="55.0" layoutY="85.0" />
             <TextField fx:id="direccionTxt" layoutX="342.0" layoutY="85.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="193.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="163.0" />
@@ -32,8 +31,9 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Label layoutY="12.0" text="Credencial vendedor" textFill="WHITE" />
             <TextField fx:id="credencialTxt" layoutX="111.0" layoutY="8.0" prefHeight="25.0" prefWidth="85.0" />
-            <Label layoutX="381.0" layoutY="141.0" text="Apellido Cliente*" textFill="WHITE" />
-            <Label layoutX="102.0" layoutY="62.0" text="Direccion*" textFill="WHITE" />
+            <Label layoutX="389.0" layoutY="61.0" text="Direccion*" textFill="WHITE" />
+            <Label layoutX="85.0" layoutY="143.0" text="Apellido Cliente*" textFill="WHITE" />
+            <Label layoutX="399.0" layoutY="143.0" text="Fecha*" textFill="WHITE" />
          </children>
       </AnchorPane>
    </center>
@@ -45,14 +45,14 @@
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="101.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="31.0" layoutX="390.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
-            <Label fx:id="IdentificacionTxt" layoutX="111.0" layoutY="54.0" text="Identificacion/Nit*" textFill="WHITE" />
+            <Label fx:id="IdentificacionTxt" layoutX="108.0" layoutY="54.0" text="Identificacion/Nit*" textFill="WHITE" />
             <TextField fx:id="apellidoTxt" layoutX="82.0" layoutY="-12.0" />
             <TextField fx:id="identificacionTxt" layoutX="82.0" layoutY="78.0" />
             <TextField fx:id="telefonoTxt" layoutX="370.0" layoutY="78.0" />
             <Button fx:id="registrarBtn" layoutX="245.0" layoutY="104.0" mnemonicParsing="false" onMouseClicked="#onRegistrarBtn" text="Registrar Venta" />
             <Button fx:id="generarBtn" layoutX="480.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#onGenerarClicked" text="Generar Factura" />
             <TextField fx:id="fechaTxt" layoutX="370.0" layoutY="-12.0" />
-            <Label layoutX="419.0" layoutY="54.0" text="Telefono*" textFill="WHITE" />
+            <Label layoutX="420.0" layoutY="54.0" text="Telefono*" textFill="WHITE" />
          </children>
       </AnchorPane>
    </bottom>

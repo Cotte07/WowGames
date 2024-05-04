@@ -19,22 +19,6 @@ public class Facturas {
 		this.identificacionCliente = identificacionCliente;
 	}
 
-	public String getCredencialVendedor() {
-		return credencialVendedor;
-	}
-
-	public void setCredencialVendedor(String credencialVendedor) {
-		this.credencialVendedor = credencialVendedor;
-	}
-
-	public String getIdentificacionCliente() {
-		return identificacionCliente;
-	}
-
-	public void setIdentificacionCliente(String identificacionCliente) {
-		this.identificacionCliente = identificacionCliente;
-	}
-
 	public Float getId() {
 		return id;
 	}
@@ -74,5 +58,23 @@ public class Facturas {
 	public void setDescuento(Float descuento) {
 		this.descuento = descuento;
 	}
+
+	public String getCredencialVendedor() {
+		return credencialVendedor;
+	}
+
+	public void setCredencialVendedor(String credencialVendedor) {
+		this.credencialVendedor = credencialVendedor;
+	}
+
+	public String getIdentificacionCliente() {
+		return identificacionCliente;
+	}
+
+	public void setIdentificacionCliente(String identificacionCliente) {
+		this.identificacionCliente = identificacionCliente;
+	}
+
+
 
 }

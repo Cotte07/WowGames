@@ -140,7 +140,7 @@ import java.util.LinkedList;
 			st1.setString(1, referencia);
 			ResultSet result = st.executeQuery(query);
 			while(result.next()) {
-				data.add(new Productos(result.getString(1), result.getString(2), result.getFloat(3), result.getString(4), result.getFloat(5), result.getString(6), result.getFloat(7), result.getString(8)));
+				data.add(new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8)));
 				
 			}
 		} catch (SQLException e) {
@@ -159,7 +159,7 @@ import java.util.LinkedList;
 			st.setString(1, referencia);
 			ResultSet result = st.executeQuery();
 			while(result.next()) {
-				producto=new Productos(result.getString(1), result.getString(2), result.getFloat(3), result.getString(4), result.getFloat(5), result.getString(6), result.getFloat(7), result.getString(8));
+				producto=new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
