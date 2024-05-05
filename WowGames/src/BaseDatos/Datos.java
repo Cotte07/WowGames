@@ -218,7 +218,7 @@ import java.util.LinkedList;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, vendedor.getCredencial());
-			st.setString(2, vendedor.getId());
+			st.setString(2, vendedor.getIdentificacion());
 			st.setString(3, vendedor.getNombre());
 			st.setString(4, vendedor.getApellido());
 			st.setString(5, vendedor.getFechaIngreso());

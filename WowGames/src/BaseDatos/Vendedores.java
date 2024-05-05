@@ -1,29 +1,32 @@
 package BaseDatos;
 
 public class Vendedores {
-	private String id;
 	private String credencial;
+	private String identificacion; 
 	private String nombre;
 	private String apellido;
 	private String fechaIngreso;
 	private String contrasena;
 	
-	public Vendedores(String id, String credencial, String nombre, String apellido, String fechaIngreso, String contrasena) {
-		this.id = id;
+	public Vendedores(String credencial,String identificacion , String nombre, String apellido, String fechaIngreso, String contrasena) {
 		this.credencial = credencial;
+		this.identificacion = identificacion;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechaIngreso = fechaIngreso;
 		this.contrasena = contrasena;
 	}
 
-	public String getId() {
-		return id;
+
+	public String getIdentificacion() {
+		return identificacion;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+
+	public void setIdentificacion(String identificacion) {
+		this.identificacion = identificacion;
 	}
+
 
 	public String getCredencial() {
 		return credencial;

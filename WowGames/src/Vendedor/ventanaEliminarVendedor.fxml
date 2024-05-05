@@ -18,7 +18,7 @@
                 <TableColumn fx:id="credencialColumn" prefWidth="75.0" text="Credencial" />
                 <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />
                   <TableColumn fx:id="apellidoColumn" prefWidth="75.0" text="Apellido" />
-                  <TableColumn fx:id="identificacionColumn" prefWidth="75.0" text="Identificacion" />
+                  <TableColumn fx:id="identificacionColumn" prefWidth="75.0" text="Id" />
                   <TableColumn fx:id="fechaColumn" prefWidth="75.0" text="Fecha Ingreso" />
                   <TableColumn fx:id="contraseñaColumn" prefWidth="75.0" text="Contraseña" />
               </columns>
