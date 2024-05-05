@@ -12,6 +12,11 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
+/**Clase del controlador de la ventana ventas por producto
+ * 
+ * 
+ *
+ */
 public class ventanaVentasPorProductoController {
 	@FXML
 	private TextField codigoTxt;

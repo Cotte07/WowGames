@@ -9,13 +9,21 @@ import java.sql.Statement;
 import java.util.LinkedList;
 
 
-
+ /**Clase en la que se conecta el proyecto con la base de datos
+  * 
+  * 
+  *
+  */
  public class Datos {
 
 	private String conectionstr = "jdbc:oracle:thin:@192.168.80.18:1521";
 	private String username = "proyecto";
 	private String password = "proyecto";
 	
+	/**Metodo en el que se establece la conexion con la base de datos
+	 * 
+	 * @return conn
+	 */
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
@@ -27,6 +35,12 @@ import java.util.LinkedList;
 		return conn;
 	} 
 	
+	/**Metodo de login para que el vendedor entre en la aplicacion
+	 * 
+	 * @param credencial
+	 * @param contrasena
+	 * @return user
+	 */
 	public Vendedores login(String credencial, String contrasena) {
 		Vendedores user=null;
 		Connection conn = this.getConnection();
@@ -47,6 +61,11 @@ import java.util.LinkedList;
 	
 }
 	
+	/**Metodo para crear nuevos clientes
+	 * 
+	 * @param Cliente
+	 * @return success retorna un booleano
+	 */
 	public boolean createCliente(Clientes Cliente) {
 		Connection conn = this.getConnection();
 		String query = "INSERT INTO cliente VALUES(?,?,?,?,?,?)";
@@ -70,7 +89,11 @@ import java.util.LinkedList;
 		return success;
 	}
 	
-	
+	/**Metodo para crear nuevas facturas
+	 * 
+	 * @param factura
+	 * @return success1 retorna un booleano
+	 */
 	public boolean createFactura(Facturas factura) {
 		Connection conn = this.getConnection();
 		String query = "INSERT INTO factura VALUES(?,?,?,?,?,?,?)";
@@ -95,7 +118,11 @@ import java.util.LinkedList;
 		return success1;
 	}
 	
-	
+	/**Metodo que busca el id que sea mayor entre las facturas para automatizar el generar los id 
+	 * 
+	 * @param factura
+	 * @return consultarId
+	 */
 	public Facturas consultarId (Facturas factura) {
 		Facturas consultarId = null;
 		Connection conn = this.getConnection();
@@ -103,7 +130,11 @@ import java.util.LinkedList;
 		return consultarId;
 	}
 	
-	
+	/**Metodo para crear nuevos productos
+	 * 
+	 * @param Producto
+	 * @return successAñadirProducto retorna un booleano
+	 */
 	public boolean createProducto(Productos Producto) {
 		Connection conn = this.getConnection();
 		String query = "INSERT INTO producto VALUES(?,?,?,?,?,?,?,?)";
@@ -129,7 +160,10 @@ import java.util.LinkedList;
 		return successAñadirProducto;
 	}
 	
-	
+	/**Metodo para mostrar los productos
+	 * 
+	 * @return data
+	 */
 	public LinkedList<Productos> getDatos(){
 		LinkedList<Productos> data = new LinkedList<Productos>();
 		Connection conn = this.getConnection();
@@ -149,6 +183,11 @@ import java.util.LinkedList;
 		return data;
 	}
 	
+	/**Metodo para eliminar un producto con el numero de referencia
+	 * 
+	 * @param producto
+	 * @return success retorna un booleano
+	 */
 	public boolean deleteProducto(Productos producto) {
 		Connection conn = this.getConnection();
 		String query = "DELETE FROM producto WHERE referencia=?";
@@ -167,6 +206,11 @@ import java.util.LinkedList;
 		return success;
 	}
 	
+	/**Metodo para actualizar los datos de los productos con el numero de referencia
+	 * 
+	 * @param producto
+	 * @return success retorna un booleano
+	 */
 	public boolean modificarProducto(Productos producto) {
 		Connection conn = this.getConnection();
 		String query = "update producto set Iva=?, TipoProducto=?, TipoJuego=?, Nombre=?, ValorUnitario=?, Impuesto=?, Platorma=? where referencia=?";
@@ -190,7 +234,11 @@ import java.util.LinkedList;
 		return success;
 		}
 	
-	
+	/**Metodo para actualizar los datos de los clientes
+	 * 
+	 * @param Cliente
+	 * @return success retorna un booleano
+	 */
 	public boolean updateCliente(Clientes Cliente) {
 		Connection conn = this.getConnection();
 		String query = "update cliente set Identificacion=?, Nombre=?, Apellido=?, FechaRegistro=?, Direccion=?, Telefono=?";
@@ -211,7 +259,12 @@ import java.util.LinkedList;
 		}
 		return success;
 		}
-
+    
+	/**Metodo para crear nuevos vendedores
+	 * 
+	 * @param vendedor
+	 * @return successAñadirVendedor
+	 */
 	public boolean createVendedor (Vendedores vendedor) {
 		Connection conn = this.getConnection();
 		String query = "INSERT INTO vendedor VALUES(?,?,?,?,?,?)";
@@ -237,6 +290,10 @@ import java.util.LinkedList;
 		return successAñadirVendedor;
 	}
 	
+	/**Medodo para mostrar los datos de los vendedores
+	 * 
+	 * @return data
+	 */
 	public LinkedList<Vendedores> getDatosVendedor(){
 		LinkedList<Vendedores> data = new LinkedList<Vendedores>();
 		Connection conn = this.getConnection();
@@ -257,6 +314,11 @@ import java.util.LinkedList;
 
 }
 	
+	/**Metodo para eliminar vendedores con la credencial
+	 * 
+	 * @param Vendedor
+	 * @return success retorna un booleano
+	 */
 	public boolean deleteVendedor(Vendedores Vendedor) {
 		Connection conn = this.getConnection();
 		String query = "DELETE FROM vendedor WHERE credencial=?";

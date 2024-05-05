@@ -12,6 +12,11 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
+/**Clase del controlador de la ventana update vendedor
+ * 
+ * 
+ *
+ */
 public class ventanaUpdateVendedorController {
 	@FXML
 	private Button regresarBtn;

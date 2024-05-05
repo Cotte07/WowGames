@@ -12,6 +12,11 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
+/**Clase del controlador de la ventana update factura producto
+ * 
+ * 
+ *
+ */
 public class ventanaUpdateFacturaProductoController {
 	@FXML
 	private Button regresarBtn;

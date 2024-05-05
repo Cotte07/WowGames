@@ -10,6 +10,11 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
+/**Clase del controlador de la ventana para previsualizar Factura
+ * 
+ * 
+ *
+ */
 public class previsualizacionFacturaController {
 	@FXML
 	private TableView<?> tablaCliente;
