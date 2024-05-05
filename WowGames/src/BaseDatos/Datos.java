@@ -12,9 +12,9 @@ import java.util.LinkedList;
 
  public class Datos {
 
-	private String conectionstr = "jdbc:oracle:thin:@192.168.80.18:1521";
-	private String username = "proyecto";
-	private String password = "proyecto";
+	private String conectionstr = "jdbc:oracle:thin:@192.168.1.6:1521";
+	private String username = "wow";
+	private String password = "wowgames";
 	
 	public Connection getConnection() {
 		Connection conn = null;
@@ -169,7 +169,7 @@ import java.util.LinkedList;
 	
 	public boolean modificarProducto(Productos producto) {
 		Connection conn = this.getConnection();
-		String query = "update producto set Iva=?, TipoProducto=?, TipoJuego=?, Nombre=?, ValorUnitario=?, Impuesto=?, Platorma=? where referencia=?";
+		String query = "update producto set iva=?, tipoProducto=?, tipoJuego=?, nombre=?, valorUnitario=?, impuesto=?, platorma=? where referencia=?";
 		boolean success = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
@@ -180,7 +180,6 @@ import java.util.LinkedList;
 			st.setFloat(5, producto.getValorUnitario());
 			st.setFloat(6, producto.getImpuesto());
 			st.setString(7, producto.getPlataforma());
-			st.setString(8, producto.getReferencia());
 			st.executeUpdate();
 			success = true;
 		} catch (SQLException e) {

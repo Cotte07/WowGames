@@ -1,5 +1,7 @@
 package Facturas;
 
+import java.awt.event.ActionEvent;
+
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
@@ -20,13 +22,13 @@ public class ventanaUpdateFacturaClienteController {
 	@FXML
 	private TableColumn<?, ?> nombreColumn;
 	@FXML
-	private TableColumn<?, ?> idColumn;
+	 private TableColumn<?, ?> apellidoColumn;
 	@FXML
 	private TableColumn<?, ?> direccionColumn;
 	@FXML
 	private TableColumn<?, ?> telefonoColumn;
 	@FXML
-	private TableColumn<?, ?> vendedorColumn;
+	private TableColumn<?, ?> identificacionColumn;
 	@FXML
 	private TextField nombreTxt;
 	@FXML
@@ -41,6 +43,34 @@ public class ventanaUpdateFacturaClienteController {
 	private TextField telefonoTxt;
 	@FXML
 	private Button modificarBtn;
+	
+	@FXML
+	void editApellido(ActionEvent event) {
+
+		
+		
+		////agg fecha 
+	    }
+
+	@FXML
+	void editDireccion(ActionEvent event) {
+
+	    }
+
+	@FXML
+	void editIdentificación(ActionEvent event) {
+
+	    }
+
+	@FXML
+	void editNombre(ActionEvent event) {
+
+	    }
+
+	@FXML
+	void editTelefono(ActionEvent event) {
+
+	    }
 
 	// Event Listener on Button[#regresarBtn].onMouseClicked
 	@FXML

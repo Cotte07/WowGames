@@ -72,10 +72,5 @@ public class ventanaConsultarProductoController {
 			this.tablaConsultarProducto.setItems(data);
 			
 		
-		
-		
-		
-		
-		
 	}
 }
