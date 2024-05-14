@@ -12,6 +12,11 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
+/**Clase del controlador de la ventana comisiones de los vendedores
+ * 
+ * 
+ *
+ */
 public class ventanaComisionesController {
 	@FXML
 	private TextField idVendedorTxt;

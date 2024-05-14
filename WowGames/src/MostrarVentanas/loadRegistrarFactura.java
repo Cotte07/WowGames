@@ -7,10 +7,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/**Clase para cargar la ventana para registrar factura
+ * 
+ *
+ */
 public class loadRegistrarFactura {
 
 	private Stage stage;
+	/**Metodo que carga la ventana
+	 * 
+	 * @param stage
+	 */
 	public loadRegistrarFactura(Stage stage) {
 		
 		if(stage == null) {

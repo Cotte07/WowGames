@@ -15,6 +15,13 @@ import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
 
+import BaseDatos.Datos;
+
+/**Clase del controlador de la ventana para modificar los productos
+ * 
+ * 
+ *
+ */
 public class ventanaModificarProductoController {
 	@FXML
 	private TextField referenciaTxt;

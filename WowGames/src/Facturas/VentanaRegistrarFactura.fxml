@@ -10,21 +10,23 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Facturas.ventanaRegistrarFacturaController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="788.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Facturas.ventanaRegistrarFacturaController">
    <top>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="483.0" prefWidth="658.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="348.0" layoutX="23.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="553.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="348.0" layoutX="23.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="729.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="29.0" layoutX="27.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="132.0" />
             <TextField fx:id="codigoProductoTxt" layoutX="167.0" layoutY="50.0" />
-            <TableView fx:id="registrarVentaTable" editable="true" layoutX="25.0" layoutY="108.0" onMouseClicked="#onSelection" prefHeight="263.0" prefWidth="548.0">
+            <TableView fx:id="registrarVentaTable" editable="true" layoutX="25.0" layoutY="108.0" onMouseClicked="#onSelection" prefHeight="263.0" prefWidth="727.0">
               <columns>
-                <TableColumn fx:id="credencialColumn" prefWidth="75.0" text="Credencial" />
-                <TableColumn fx:id="codigoProductoColumn" prefWidth="75.0" text="Referencia" />
-                  <TableColumn fx:id="tipoColumn" prefWidth="75.0" text="Tipo" />
-                  <TableColumn fx:id="nombreProductoColumn" prefWidth="75.0" text="Nombre Producto" />
-                  <TableColumn fx:id="plataformaColumn" prefWidth="75.0" text="Plataforma" />
-                  <TableColumn fx:id="precioColumn" prefWidth="75.0" text="Precio" />
+                <TableColumn fx:id="referenciaColumn" prefWidth="75.0" text="Referencia" />
+                  <TableColumn fx:id="tipoProductoColumn" prefWidth="85.33333587646484" text="Tipo Producto" />
+                  <TableColumn fx:id="nombreProductoColumn" prefWidth="182.00001525878906" text="Nombre" />
+                  <TableColumn fx:id="plataformaColumn" prefWidth="101.33331298828125" text="Plataforma" />
+                  <TableColumn fx:id="tipoJuegoColumn" prefWidth="75.33334350585938" text="Tipo Juego" />
+                  <TableColumn fx:id="ivaColumn" prefWidth="48.0" text="Iva" />
+                  <TableColumn fx:id="impuestoColumn" prefWidth="64.6666259765625" text="Impuesto" />
+                  <TableColumn fx:id="valorColumn" prefWidth="90.66668701171875" text="Precio" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
