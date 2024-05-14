@@ -2,6 +2,7 @@ package Facturas;
 
 import java.awt.event.ActionEvent;
 
+import BaseDatos.Datos;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
@@ -55,6 +56,10 @@ public class ventanaUpdateFacturaClienteController {
 	@FXML
 	void editDireccion(ActionEvent event) {
 
+		
+		Datos datos = new Datos();
+		boolean exito = gestorClientes.updateCliente(cliente);
+		
 	    }
 
 	@FXML

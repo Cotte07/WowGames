@@ -274,4 +274,23 @@ import java.util.LinkedList;
 		}
 		return success;
 	}
+	
+	public boolean deleteCliente(Clientes cliente) {
+		Connection conn = this.getConnection();
+		String query = "DELETE FROM cliente WHERE identificacion =?";
+		boolean success = false;
+		
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, cliente.getIdentificacion());
+			st.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		success = true;
+		
+		return success;
+	}
  }

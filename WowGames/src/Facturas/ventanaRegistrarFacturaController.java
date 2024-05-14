@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import BaseDatos.Clientes;
 import BaseDatos.Datos;
 import BaseDatos.Facturas;
+import BaseDatos.Productos;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -101,9 +102,10 @@ public class ventanaRegistrarFacturaController {
     	DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	    String fecha = fechaActual.format(formato);
 		
-		//se calcula el subtotal
-	    
-	    
+	    //se calcula el subtotal
+	    	Datos datos3 = new Datos();
+	    		Productos resultado3 = null;
+	    resultado3 = datos3.updateCliente(resultado3);
 	    
 		Facturas nuevo = new Facturas(idFac, fecha, subtotal, valorTotal,descuento, crendencialVendedor, identificacionCliente );
 		boolean success = this.dataProvider.createFactura(nuevo);
