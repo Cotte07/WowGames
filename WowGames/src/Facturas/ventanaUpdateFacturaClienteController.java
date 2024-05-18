@@ -53,19 +53,12 @@ public class ventanaUpdateFacturaClienteController {
 	@FXML
 	void editApellido(ActionEvent event) {
 
-		
-		
-		////agg fecha 
 	    }
 
 	@FXML
-	void editDireccion(ActionEvent event) {
+    void editDireccion(ActionEvent event) {
 
-		
-		Datos datos = new Datos();
-		boolean exito = gestorClientes.updateCliente(cliente);
-		
-	    }
+    }
 
 	@FXML
 	void editIdentificación(ActionEvent event) {

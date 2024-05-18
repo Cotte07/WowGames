@@ -10,32 +10,55 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="788.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Facturas.ventanaRegistrarFacturaController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="849.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Facturas.ventanaRegistrarFacturaController">
    <top>
-      <AnchorPane prefHeight="483.0" prefWidth="658.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="423.0" prefWidth="788.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="348.0" layoutX="23.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="729.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="29.0" layoutX="27.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="132.0" />
-            <TextField fx:id="codigoProductoTxt" layoutX="167.0" layoutY="50.0" />
-            <TableView fx:id="registrarVentaTable" editable="true" layoutX="25.0" layoutY="108.0" onMouseClicked="#onSelection" prefHeight="263.0" prefWidth="727.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="401.0" layoutX="23.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="805.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="28.0" layoutX="27.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="132.0" />
+            <TextField fx:id="codigoProductoTxt" layoutX="159.0" layoutY="42.0" />
+            <TableView fx:id="registrarVentaTable" editable="true" layoutX="25.0" layoutY="108.0" onMouseClicked="#onSelection" prefHeight="164.0" prefWidth="802.0">
               <columns>
                 <TableColumn fx:id="referenciaColumn" prefWidth="75.0" text="Referencia" />
-                  <TableColumn fx:id="tipoProductoColumn" prefWidth="85.33333587646484" text="Tipo Producto" />
-                  <TableColumn fx:id="nombreProductoColumn" prefWidth="182.00001525878906" text="Nombre" />
-                  <TableColumn fx:id="plataformaColumn" prefWidth="101.33331298828125" text="Plataforma" />
-                  <TableColumn fx:id="tipoJuegoColumn" prefWidth="75.33334350585938" text="Tipo Juego" />
-                  <TableColumn fx:id="ivaColumn" prefWidth="48.0" text="Iva" />
-                  <TableColumn fx:id="impuestoColumn" prefWidth="64.6666259765625" text="Impuesto" />
-                  <TableColumn fx:id="valorColumn" prefWidth="90.66668701171875" text="Precio" />
+                  <TableColumn fx:id="tipoProductoColumn" prefWidth="99.33333587646484" text="Tipo Producto" />
+                  <TableColumn fx:id="nombreProductoColumn" prefWidth="161.33335876464844" text="Nombre" />
+                  <TableColumn fx:id="plataformaColumn" prefWidth="83.33331298828125" text="Plataforma" />
+                  <TableColumn fx:id="tipoJuegoColumn" prefWidth="75.33328247070312" text="Tipo Juego" />
+                  <TableColumn fx:id="ivaColumn" prefWidth="38.6666259765625" text="Iva" />
+                  <TableColumn fx:id="impuestoColumn" prefWidth="62.66668701171875" text="Impuesto" />
+                  <TableColumn fx:id="valorColumn" prefWidth="71.33331298828125" text="Precio" />
+                  <TableColumn fx:id="cantidadColumn" prefWidth="68.66668701171875" text="Cantidad" />
+                  <TableColumn fx:id="totalColumn" prefWidth="72.6666259765625" text="Total" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Label layoutX="39.0" layoutY="54.0" text="Referencia producto" textFill="#f6f3f3" />
-            <Button fx:id="ingresarBtn" layoutX="338.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onIngresarClicked" text="INGRESAR" />
-            <Button id="regresarBtn" fx:id="regresarBtn" layoutX="490.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="REGRESAR" />
-            <CheckBox fx:id="descuentoBox" layoutX="417.0" layoutY="63.0" mnemonicParsing="false" text="Descuento" />
+            <Label layoutX="35.0" layoutY="44.0" prefHeight="20.0" prefWidth="119.0" text="Referencia producto" textFill="#f6f3f3" />
+            <Button fx:id="ingresarBtn" layoutX="338.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#onIngresarClicked" text="INGRESAR" />
+            <Button id="regresarBtn" fx:id="regresarBtn" layoutX="673.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" stylesheets="@../application/application.css" text="REGRESAR" />
+            <CheckBox fx:id="descuentoBox" layoutX="334.0" layoutY="45.0" mnemonicParsing="false" text="Descuento" textFill="WHITE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="28.0" layoutX="49.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+            <Label layoutX="62.0" layoutY="80.0" prefHeight="18.0" prefWidth="61.0" text="Cantidad" textFill="#f6f3f3" />
+            <TextField fx:id="cantidadTxt" layoutX="123.0" layoutY="76.0" prefHeight="25.0" prefWidth="45.0" />
+            <Button fx:id="generarFacturaBtn" layoutX="686.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onGenerarClicked" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #5a1087;" text="Generar factura" textFill="#e2e9e4" />
+            <Button fx:id="generarFacturaBtn1" layoutX="38.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onGenerarClicked" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #5a1087;" text="Credencial vendedor" textFill="WHITE" />
+            <TextField fx:id="credencialVendedorTxt" layoutX="172.0" layoutY="387.0" prefHeight="25.0" prefWidth="123.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="22.0" layoutX="38.0" layoutY="282.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Label layoutX="50.0" layoutY="284.0" text="Nombre Cliente*" textFill="WHITE" />
+            <TextField fx:id="nombreTxt" layoutX="154.0" layoutY="280.0" prefHeight="25.0" prefWidth="135.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="22.0" layoutX="38.0" layoutY="319.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="22.0" layoutX="585.0" layoutY="282.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="22.0" layoutX="319.0" layoutY="282.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="22.0" layoutX="319.0" layoutY="319.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+            <Label layoutX="48.0" layoutY="321.0" text="Apellido Cliente*" textFill="WHITE" />
+            <Label fx:id="IdentificacionTxt" layoutX="592.0" layoutY="284.0" text="Identificacion/Nit*" textFill="WHITE" />
+            <Label layoutX="347.0" layoutY="284.0" text="Telefono*" textFill="WHITE" />
+            <Label layoutX="346.0" layoutY="321.0" text="Direccion*" textFill="WHITE" />
+            <TextField fx:id="apellidoTxt" layoutX="154.0" layoutY="317.0" prefHeight="25.0" prefWidth="135.0" />
+            <TextField fx:id="identificacionTxt" layoutX="695.0" layoutY="280.0" prefHeight="25.0" prefWidth="122.0" />
+            <TextField fx:id="telefonoTxt" layoutX="437.0" layoutY="280.0" prefHeight="25.0" prefWidth="115.0" />
+            <TextField fx:id="direccionTxt" layoutX="436.0" layoutY="317.0" prefHeight="25.0" prefWidth="117.0" />
          </children>
       </AnchorPane>
    </top>
@@ -49,9 +72,6 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </right>
    <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="generarFacturaBtn" layoutX="498.0" mnemonicParsing="false" onMouseClicked="#onGenerarClicked" text="Generar factura" />
-         </children></AnchorPane>
+      <AnchorPane prefHeight="45.0" prefWidth="788.0" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>
