@@ -1,5 +1,6 @@
 package BaseDatos;
 
+import Vendedor.Vendedores;
 
 /**Clase para asignar roles de usuario y admin
  * 

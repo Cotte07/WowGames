@@ -2,9 +2,8 @@ package Facturas;
 
 import java.io.IOException;
 
-import BaseDatos.Clientes;
 import BaseDatos.Datos;
-import BaseDatos.Facturas;
+import Cliente.Clientes;
 import MostrarVentanas.MostrarVentanaOpciones;
 import MostrarVentanas.loadRegistrarFactura;
 import javafx.fxml.FXML;

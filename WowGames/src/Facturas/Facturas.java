@@ -1,4 +1,4 @@
-package BaseDatos;
+package Facturas;
 
 /**Clase para crear el objeto factura
  * 

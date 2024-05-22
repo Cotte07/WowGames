@@ -1,4 +1,4 @@
-package BaseDatos;
+package Cliente;
 
 /**Clase para crear el objeto tipo persona clientes
  * 

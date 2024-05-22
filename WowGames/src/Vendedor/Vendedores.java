@@ -1,4 +1,4 @@
-package BaseDatos;
+package Vendedor;
 
 /**Clase para crear el objeto vendedor
  * 

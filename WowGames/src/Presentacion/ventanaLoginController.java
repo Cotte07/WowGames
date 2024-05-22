@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import BaseDatos.Datos;
 import BaseDatos.Session;
-import BaseDatos.Vendedores;
 import MostrarVentanas.MostrarVentanaOpciones;
+import Vendedor.Vendedores;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

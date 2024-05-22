@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
+import Cliente.Clientes;
+import Facturas.Facturas;
+import Producto.Productos;
+import Vendedor.Vendedores;
+
 
  /**Clase en la que se conecta el proyecto con la base de datos
   * 

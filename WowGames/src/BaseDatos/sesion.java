@@ -1,6 +1,6 @@
 package BaseDatos;
 
-
+import Producto.Productos;
 
 public class sesion {
 	private static Productos producto;

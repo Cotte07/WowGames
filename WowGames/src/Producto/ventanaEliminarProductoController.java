@@ -3,8 +3,6 @@ package Producto;
 import java.util.LinkedList;
 
 import BaseDatos.Datos;
-import BaseDatos.Productos;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

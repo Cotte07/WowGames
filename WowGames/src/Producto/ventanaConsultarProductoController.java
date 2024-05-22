@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 import BaseDatos.Datos;
-import BaseDatos.Productos;
 import BaseDatos.sesion;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

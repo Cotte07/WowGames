@@ -1,4 +1,4 @@
-package BaseDatos;
+package Producto;
 
 /**Clase que crea objeto producto
  * 
