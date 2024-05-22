@@ -62,6 +62,10 @@ public class ventanaComisionesController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: VentanaOpciones");
+
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        

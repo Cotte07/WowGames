@@ -42,6 +42,9 @@ public class ventanaOpcionesVendedorController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: RegistrarFactura");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
@@ -73,6 +76,9 @@ public class ventanaOpcionesVendedorController {
 	        // Configura el nuevo escenario
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
+	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: ConsultarFactura");
 	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
@@ -107,6 +113,9 @@ public class ventanaOpcionesVendedorController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: EliminarFactura");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
@@ -138,6 +147,9 @@ public class ventanaOpcionesVendedorController {
 	        // Configura el nuevo escenario
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
+	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: VentanaLogin");
 	        
 	        // Muestra el nuevo escenario
 	        newStage.show();

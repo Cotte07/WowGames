@@ -16,6 +16,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			primaryStage.setTitle("WowGames: VentanaLogin");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

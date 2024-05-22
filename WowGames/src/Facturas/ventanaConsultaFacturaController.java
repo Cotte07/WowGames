@@ -86,6 +86,9 @@ public class ventanaConsultaFacturaController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        //Agregar titulo a la ventana
+	        newStage.setTitle("WowGames: VentanaOpciones");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        

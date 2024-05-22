@@ -9,25 +9,23 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.ventanaLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="548.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.ventanaLoginController">
    <top>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4145" height="35.0" layoutX="240.0" layoutY="105.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
-            <TextField fx:id="credencialTxt" layoutX="241.0" layoutY="149.0" prefHeight="21.0" prefWidth="117.0" style="-fx-background-color: #ffffff;" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="102.0" stroke="BLACK" strokeType="INSIDE" width="199.0" />
-            <ImageView fitHeight="94.0" fitWidth="192.0" layoutX="4.0" layoutY="4.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4145" height="36.0" layoutX="324.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="178.0" />
+            <TextField fx:id="credencialTxt" layoutX="324.0" layoutY="60.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #ffffff;" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="268.0" layoutX="-2.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="271.0" />
+            <Label layoutX="331.0" layoutY="29.0" prefHeight="25.0" prefWidth="163.0" style="-fx-text-fill: #ffffff;" text="Ingrese número de credencial" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" />
+            <ImageView fitHeight="249.0" fitWidth="256.0" layoutX="7.0" layoutY="6.0">
                <image>
-                  <Image url="@../Imagenes/logoWowGames.jpg" />
+                  <Image url="@../Imagenes/logo2wowGames.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="382.0" layoutY="27.0">
-               <image>
-                  <Image url="@../../../../../Escritorio/imagenes%20proyecto%20integrador/1f47e.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="259.0" layoutY="119.0" prefHeight="25.0" prefWidth="81.0" style="-fx-text-fill: #ffffff;" text="de credencial" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" />
-            <Label layoutX="254.0" layoutY="103.0" prefHeight="25.0" prefWidth="95.0" style="-fx-text-fill: #ffffff;" text="Ingrese Número" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4145" height="34.0" layoutX="322.0" layoutY="105.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
+            <Label layoutX="359.0" layoutY="113.0" style="-fx-text-fill: #ffffff;" text="Ingrese contraseña" textAlignment="CENTER" />
+            <TextField fx:id="contrasenaTxt" layoutX="323.0" layoutY="139.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #ffffff;" />
+            <Button fx:id="entrarBtn" layoutX="383.0" layoutY="203.0" mnemonicParsing="false" onMouseClicked="#onEntrarClicked" style="-fx-background-color: #000000;" text="ENTRAR" textFill="#04ac0c" />
          </children>
       </AnchorPane>
    </top>
@@ -35,25 +33,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="102.0" layoutX="399.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="201.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4145" height="38.0" layoutX="240.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
-            <TextField fx:id="contrasenaTxt" layoutX="241.0" layoutY="68.0" prefHeight="13.0" prefWidth="117.0" style="-fx-background-color: #ffffff;" />
-            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="23.0" layoutY="-32.0">
-               <image>
-                  <Image url="@../../../../../Escritorio/imagenes%20proyecto%20integrador/1f47e.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="entrarBtn" layoutX="267.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#onEntrarClicked" style="-fx-background-color: #000000;" text="ENTRAR" />
-            <Label layoutX="247.0" layoutY="28.0" style="-fx-text-fill: #ffffff;" text="Ingrese contraseña" textAlignment="CENTER" />
-            <ImageView fitHeight="94.0" fitWidth="192.0" layoutX="404.0" layoutY="104.0">
-               <image>
-                  <Image url="@../Imagenes/logoWowGames.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+      <AnchorPane prefHeight="89.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </bottom>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />

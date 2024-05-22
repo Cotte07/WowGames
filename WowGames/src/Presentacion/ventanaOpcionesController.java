@@ -63,12 +63,15 @@ public class ventanaOpcionesController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: AñadirProducto");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
 	        // Cierra el escenario actual
 	        currentStage.close();
-	        
+	        	        
 	    } catch (IOException e) {
 	        // TODO Auto-generated catch block
 	        e.printStackTrace();
@@ -94,6 +97,9 @@ public class ventanaOpcionesController {
 	        // Configura el nuevo escenario
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
+	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: ModificarProducto");
 	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
@@ -129,6 +135,9 @@ public class ventanaOpcionesController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	     // Titulo de la ventana
+	        newStage.setTitle("WowGames: EliminarProducto");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
@@ -163,6 +172,9 @@ public class ventanaOpcionesController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: AñadirVendedor");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
@@ -195,6 +207,9 @@ public class ventanaOpcionesController {
 	        // Configura el nuevo escenario
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
+	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: ConsultarVendedor");
 	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
@@ -229,6 +244,9 @@ public class ventanaOpcionesController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: EliminarVendedor");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
@@ -259,6 +277,9 @@ public class ventanaOpcionesController {
 	        // Configura el nuevo escenario
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
+	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: VentasPorProducto");
 	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
@@ -294,6 +315,9 @@ public class ventanaOpcionesController {
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
 	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: Comisiones");
+	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
 	        
@@ -321,6 +345,9 @@ public class ventanaOpcionesController {
 	        // Configura el nuevo escenario
 	        Stage newStage = new Stage();
 	        newStage.setScene(scene);
+	        
+	        // Titulo de la ventana
+	        newStage.setTitle("WowGames: VentanaLogin");
 	        
 	        // Muestra el nuevo escenario
 	        newStage.show();
