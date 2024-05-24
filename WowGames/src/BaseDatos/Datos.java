@@ -66,6 +66,26 @@ import Vendedor.Vendedores;
 	
 }
 	
+	public Administrador loginAdmin(String credencial, String contrasena) {
+		Administrador user=null;
+		Connection conn = this.getConnection();
+		try {
+			String query = "select * from administrador where credencial=? and constrasenaadmin=?";
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, credencial);
+			st.setString(2, contrasena);
+			ResultSet result = st.executeQuery();
+			while(result.next()) {
+				user = new Administrador (result.getString(1), result.getString(2));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return user;
+	
+}
+	
 	/**Metodo para crear nuevos clientes
 	 * 
 	 * @param Cliente
@@ -175,7 +195,7 @@ import Vendedor.Vendedores;
 		Statement st;
 		try {
 			st = conn.createStatement();
-			String query = "select * from producto";
+			String query = "select * from producto where referencia=?";
 			ResultSet result = st.executeQuery(query);
 			while(result.next()) {
 				data.add(new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8)));

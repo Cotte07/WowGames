@@ -9,6 +9,18 @@ import Vendedor.Vendedores;
  */
 public class Session {
 	private static Vendedores vendedor;
+	private static Administrador admnistrador; 
+	
+	
+	
+	public static Administrador getAdmnistrador() {
+		return admnistrador;
+	}
+
+	public static void setAdmnistrador(Administrador admnistrador) {
+		Session.admnistrador = admnistrador;
+	}
+
 	private static boolean isAdmin;
     
 	/**Metodo para obtener vendedor

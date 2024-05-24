@@ -19,7 +19,7 @@ public class MostrarVentanaOpciones {
 	 */
 	public MostrarVentanaOpciones(Stage st) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/Presentacion/ventanaOpcionesVendedor.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/Presentacion/ventanaOpciones.fxml"));
 			Scene sc = new Scene(root);
 			st.setScene(sc);
 			st.setTitle("WowGames: VentanaOpciones");
@@ -30,3 +30,4 @@ public class MostrarVentanaOpciones {
 	}
 
 }
+
