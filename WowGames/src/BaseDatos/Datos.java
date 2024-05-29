@@ -25,6 +25,10 @@ import Vendedor.Vendedores;
 	private String username = "wow";
 	private String password = "wowgames";
 	
+	
+	
+	
+	
 	/**Metodo en el que se establece la conexion con la base de datos
 	 * 
 	 * @return conn
@@ -39,6 +43,8 @@ import Vendedor.Vendedores;
 		}
 		return conn;
 	} 
+	
+	
 	
 	/**Metodo de login para que el vendedor entre en la aplicacion
 	 * 
@@ -66,25 +72,32 @@ import Vendedor.Vendedores;
 	
 }
 	
-	public Administrador loginAdmin(String credencial, String contrasena) {
-		Administrador user=null;
+	
+	
+	
+	public Administrador loginAdmin(String credencial, String constrasenaAdmin) {
+		Administrador admin=null;
 		Connection conn = this.getConnection();
 		try {
-			String query = "select * from administrador where credencial=? and constrasenaadmin=?";
+			String query = "select * from administrador where credencial=? and constrasenaAdmin=?";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, credencial);
-			st.setString(2, contrasena);
+			st.setString(2, constrasenaAdmin);
 			ResultSet result = st.executeQuery();
 			while(result.next()) {
-				user = new Administrador (result.getString(1), result.getString(2));
+				admin = new Administrador (result.getString(1), result.getString(2));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.print("adminNoEncontrado");
 		}
-		return user;
+		return admin;
 	
 }
+	
+	
+	
 	
 	/**Metodo para crear nuevos clientes
 	 * 
@@ -113,6 +126,8 @@ import Vendedor.Vendedores;
 		}
 		return success;
 	}
+	
+	
 	
 	/**Metodo para crear nuevas facturas
 	 * 
@@ -143,6 +158,8 @@ import Vendedor.Vendedores;
 		return success1;
 	}
 	
+	
+	
 	/**Metodo que busca el id que sea mayor entre las facturas para automatizar el generar los id 
 	 * 
 	 * @param factura
@@ -154,6 +171,8 @@ import Vendedor.Vendedores;
 		String query = "SELECT id FROM factura WHERE id = (SELECT MAX(id) FROM factura)(?)";
 		return consultarId;
 	}
+	
+	
 	
 	/**Metodo para crear nuevos productos
 	 * 
@@ -185,6 +204,33 @@ import Vendedor.Vendedores;
 		return successAñadirProducto;
 	}
 	
+	
+	
+	public Productos consultarProducto(String referencia) {
+	    Connection conn = this.getConnection();
+	    String query = "SELECT * FROM producto WHERE referencia = ?";
+	    Productos data = null;
+	    
+	    try {
+	        PreparedStatement st = conn.prepareStatement(query);
+	        st.setString(1, referencia);
+	        ResultSet res = st.executeQuery();
+	        
+	        if (res.next()) {
+	            data = new Productos(res.getString(1), res.getFloat(2), res.getString(3), res.getString(4), res.getString(5), res.getFloat(6), res.getFloat(7), res.getString(8));
+	        }
+	        
+	        conn.close(); // Cerrar la conexión después de su uso
+	    } catch (SQLException e) {
+	        System.out.println("Error al consultar producto: " + e.getMessage());
+	       
+	    }
+	    
+	    return data;
+	}
+
+	
+	
 	/**Metodo para mostrar los productos
 	 * 
 	 * @return data
@@ -195,7 +241,7 @@ import Vendedor.Vendedores;
 		Statement st;
 		try {
 			st = conn.createStatement();
-			String query = "select * from producto where referencia=?";
+			String query = "select * from producto";
 			ResultSet result = st.executeQuery(query);
 			while(result.next()) {
 				data.add(new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8)));
@@ -207,6 +253,9 @@ import Vendedor.Vendedores;
 		}
 		return data;
 	}
+	
+	
+	
 	
 	/**Metodo para eliminar un producto con el numero de referencia
 	 * 
@@ -230,6 +279,9 @@ import Vendedor.Vendedores;
 		}
 		return success;
 	}
+	
+	
+	
 	
 	/**Metodo para actualizar los datos de los productos con el numero de referencia
 	 * 
@@ -258,6 +310,9 @@ import Vendedor.Vendedores;
 		return success;
 		}
 	
+	
+	
+	
 	/**Metodo para actualizar los datos de los clientes
 	 * 
 	 * @param Cliente
@@ -284,6 +339,9 @@ import Vendedor.Vendedores;
 		return success;
 		}
     
+	
+	
+	
 	/**Metodo para crear nuevos vendedores
 	 * 
 	 * @param vendedor
@@ -314,6 +372,8 @@ import Vendedor.Vendedores;
 		return successAñadirVendedor;
 	}
 	
+	
+	
 	/**Medodo para mostrar los datos de los vendedores
 	 * 
 	 * @return data
@@ -338,6 +398,8 @@ import Vendedor.Vendedores;
 
 }
 	
+	
+	
 	/**Metodo para eliminar vendedores con la credencial
 	 * 
 	 * @param Vendedor
@@ -361,6 +423,9 @@ import Vendedor.Vendedores;
 		}
 		return success;
 	}
+	
+	
+	
 	
 	public boolean deleteCliente(Clientes cliente) {
 		Connection conn = this.getConnection();

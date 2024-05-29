@@ -9,16 +9,14 @@ import Vendedor.Vendedores;
  */
 public class Session {
 	private static Vendedores vendedor;
-	private static Administrador admnistrador; 
+	private static Administrador administrador; 
 	
-	
-	
-	public static Administrador getAdmnistrador() {
-		return admnistrador;
+	public static Administrador getAdministrador() {
+		return Session.administrador;
 	}
 
-	public static void setAdmnistrador(Administrador admnistrador) {
-		Session.admnistrador = admnistrador;
+	public static void setAdministrador(Administrador administrador) {
+		Session.administrador = administrador;
 	}
 
 	private static boolean isAdmin;

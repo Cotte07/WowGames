@@ -14,7 +14,25 @@ public class Productos {
 	private float valorUnitario;
 	private float impuesto;
 	private String plataforma;
+	private Integer cantidad; 
+	private float total;
 	
+	public float getTotal() {
+		return total;
+	}
+
+	public void setTotal(float total) {
+		this.total = total;
+	}
+
+	public Integer getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+
 	/**Metodo constructor de los productos
 	 * 
 	 * @param referencia
