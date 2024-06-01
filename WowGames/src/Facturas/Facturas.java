@@ -1,5 +1,10 @@
 package Facturas;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import Producto.Productos;
+
 /**Clase para crear el objeto factura
  * 
  * 
@@ -14,6 +19,7 @@ public class Facturas {
 	private String credencialVendedor;
 	private String identificacionCliente;
 	
+	private List<Productos> productos;
 	/**Metodo constructor para las facturas
 	 * 
 	 * @param id
@@ -32,8 +38,18 @@ public class Facturas {
 		this.descuento = descuento;
 		this.credencialVendedor = credencialVendedor;
 		this.identificacionCliente = identificacionCliente;
+		this.productos = productos;
+		productos = new LinkedList<Productos>();
 	}
     
+	public List<Productos> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(List<Productos> productos) {
+		this.productos = productos;
+	}
+
 	/**Getter para obtener el valor del atributo 'id'
 	 * 
 	 * @return id
@@ -146,6 +162,7 @@ public class Facturas {
 		this.identificacionCliente = identificacionCliente;
 	}
 
+	
 
 
 }

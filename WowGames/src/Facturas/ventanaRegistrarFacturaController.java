@@ -96,6 +96,10 @@ public class ventanaRegistrarFacturaController implements Initializable{
 	private Datos dataProvider = new Datos();
 	private Datos dataProvider1 = new Datos();
 	private ObservableList<Productos> data = FXCollections.observableArrayList();
+	private ObservableList<Clientes> data1 = FXCollections.observableArrayList();
+	private ObservableList<Facturas> data2 = FXCollections.observableArrayList();
+	private ObservableList<FacturaProducto> data3 = FXCollections.observableArrayList();
+
 	
 	private float id; 
 	private String fecha;
@@ -104,9 +108,12 @@ public class ventanaRegistrarFacturaController implements Initializable{
 	private float descuento = 0;
 	private String crendencialVendedor;
 	private String identificacionCliente;
-	private Float idFac = null;
+	private float valorTotalFactura = 0;
+	private String totalFactura;
+	int validar = 0;
 	
 	Productos producto;
+	
 	
 	// Event Listener on TableView[#registrarVentaTable].onMouseClicked
 	@FXML
@@ -135,22 +142,37 @@ public class ventanaRegistrarFacturaController implements Initializable{
 		        int cantidad = Integer.parseInt(cantidadString);//cambia el valor de cantidad de tipo String a tipo int
 		        
 		        Operaciones op = new Operaciones();
+		        op.setProducto(producto);
 		        float totalProducto = op.total();
 		        
-		        totalProducto = (totalProducto*cantidad);//- (totalProducto*descuento);
 		        
+		        descuento = totalProducto*descuento;
+		        totalProducto = (totalProducto*cantidad) - descuento;
+		        
+		        producto.setCantidad(cantidad);
 		        
 		        		        
 		        cantidadColumn.setCellValueFactory(new PropertyValueFactory<>("cantidad")); //agrego el valor de cantidad a la columna cantidad
 		        totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
+		        
+		        
 		        for (Productos prod : data) {
 		            prod.setCantidad(cantidad);
-		            prod.setTotal(totalProducto); // Establecer la cantidad en el objeto Producto
+		            prod.setTotal(totalProducto); 
 		        }
 		        
 		        
-		        
+		       
+		   
 		        this.registrarVentaTable.setItems(data); // Asignar la lista a la TableView para que se muestren los datos
+		    	
+	            
+		        valorTotalFactura += producto.getTotal();
+		        
+		        subtotal += op.subTotal();
+	            
+	            totalFactura = Float.toString(valorTotalFactura);
+	            valorTotalLabel.setText(totalFactura);
 		    	}
 			}
 		 catch (Exception e) {
@@ -205,46 +227,74 @@ public class ventanaRegistrarFacturaController implements Initializable{
 	 */
 	@FXML
 	public void onGenerarClicked(MouseEvent event) {		
-
-		//se genera automaticamente el ID de cada factura
-	if(idFac == null) {
-				idFac = (float) 1;
-			}else {
-				Datos datos = new Datos(); 
-		        Facturas resultado = null;
-		        resultado = datos.consultarId(resultado);
-		        
-		        idFac = resultado.getId() + 1; 
-			}
 		
-		//se calcula la fecha
-		LocalDate fechaActual = LocalDate.now();
-    	DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-	    String fecha = fechaActual.format(formato);
+		Clientes cliente = new Clientes(identificacionTxt.getText(), nombreTxt.getText(),
+				apellidoTxt.getText(),fecha ,direccionTxt.getText(), telefonoTxt.getText());
 		
-	    //se calcula el subtotal
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-		Facturas nuevo = new Facturas(idFac, fecha, subtotal, valorTotal,descuento, crendencialVendedor, identificacionCliente );
-		boolean success = this.dataProvider.createFactura(nuevo);
-		if (success) {
-			Alert alt = new Alert(Alert.AlertType.INFORMATION);
-			alt.setContentText("Factura Creada");
-			alt.setHeaderText("Creado");
-			alt.show();
-		}else {
+        boolean successAñadirCliente = this.dataProvider1.createCliente(cliente);
+        
+        if (successAñadirCliente) {
+             
+        	validar += 1;
+        } else {
 			Alert alt = new Alert(Alert.AlertType.ERROR);
-			alt.setContentText("Error al crear el factura");
-			alt.setHeaderText("Error");
+			alt.setContentText("Error creando la factura: c");
+			alt.setHeaderText("error");
 			alt.show();
-		}
 		
+	}
+        
+        Facturas factura = new Facturas(id, fecha, subtotal, valorTotalFactura, descuento, 
+        		credencialVendedorTxt.getText(), identificacionTxt.getText());
+        
+        boolean succesAñadirFactura = this.dataProvider.createFactura(factura);
+        
+        if (succesAñadirFactura) {
+            
+        	validar += 1; 
+        	
+        } else {
+			Alert alt = new Alert(Alert.AlertType.ERROR);
+			alt.setContentText("Error creando la factura: f");
+			alt.setHeaderText("error");
+			alt.show();
 		
+	}
+        int cantidadProducto;
+        cantidadProducto =Integer.parseInt(cantidadTxt.getText());
+        
+        String idFactura = null;
+        
+        int idfacturaProducto = 0;
+        String idf = null;
+        
+        
+        FacturaProducto fp = new FacturaProducto(idf, cantidadProducto, idFactura, codigoProductoTxt.getText());
+        boolean succesFacturaProducto = this.dataProvider.facturaProducto(fp);
+
+        if(succesFacturaProducto) {
+        	validar += 1;
+        }else {
+			Alert alt = new Alert(Alert.AlertType.ERROR);
+			alt.setContentText("Error creando la factura: fp");
+			alt.setHeaderText("error");
+			alt.show();	
+        }
+
+        if(validar == 3) {
+        	Alert alt = new Alert(AlertType.CONFIRMATION);
+			alt.setContentText("Guardado");
+			alt.setHeaderText("Se generó la factura");
+			alt.show();
+        }
+        else {
+        	Alert alt = new Alert(Alert.AlertType.ERROR);
+			alt.setContentText("Error creando la factura");
+			alt.setHeaderText("error");
+			alt.show();
+        }
+        
+        
 	}
 	
 	

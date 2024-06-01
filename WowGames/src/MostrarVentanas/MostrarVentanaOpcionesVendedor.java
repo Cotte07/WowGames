@@ -12,14 +12,14 @@ import javafx.stage.Stage;
  * 
  *
  */
-public class MostrarVentanaOpciones {
+public class MostrarVentanaOpcionesVendedor {
 	/**Metodo que abre la ventana
 	 * 
 	 * @param st
 	 */
-	public MostrarVentanaOpciones(Stage st) {
+	public MostrarVentanaOpcionesVendedor(Stage st) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/Presentacion/ventanaOpciones.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/Presentacion/ventanaOpcionesVendedor.fxml"));
 			Scene sc = new Scene(root);
 			st.setScene(sc);
 			st.setTitle("WowGames: VentanaOpciones");
@@ -29,4 +29,3 @@ public class MostrarVentanaOpciones {
 		}
 	}
 }
-

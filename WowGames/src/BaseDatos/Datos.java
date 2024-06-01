@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.LinkedList;
 
 import Cliente.Clientes;
+import Facturas.FacturaProducto;
 import Facturas.Facturas;
 import Producto.Productos;
 import Vendedor.Vendedores;
@@ -106,16 +107,15 @@ import Vendedor.Vendedores;
 	 */
 	public boolean createCliente(Clientes Cliente) {
 		Connection conn = this.getConnection();
-		String query = "INSERT INTO cliente VALUES(?,?,?,?,?,?)";
+		String query = "INSERT INTO cliente VALUES(?,?,?,SYSDATE,?,?)";
 		boolean success = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, Cliente.getIdentificacion());
 			st.setString(2, Cliente.getNombre());
 			st.setString(3, Cliente.getApellido());
-			st.setString(4, Cliente.getFechaRegistro());
-			st.setString(5, Cliente.getDireccion());
-			st.setString(6, Cliente.getTelefono());
+			st.setString(4, Cliente.getDireccion());
+			st.setString(5, Cliente.getTelefono());
 			st.executeUpdate();
 			success = true;
 			
@@ -125,7 +125,7 @@ import Vendedor.Vendedores;
 			e.printStackTrace();
 		}
 		return success;
-	}
+	}//;
 	
 	
 	
@@ -136,17 +136,15 @@ import Vendedor.Vendedores;
 	 */
 	public boolean createFactura(Facturas factura) {
 		Connection conn = this.getConnection();
-		String query = "INSERT INTO factura VALUES(?,?,?,?,?,?,?)";
+		String query = "INSERT INTO factura VALUES(f_agregarId(),sysdate,?,?,?,?,?)";
 		boolean success1 = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setFloat(1, factura.getId());
-			st.setString(2, factura.getFecha());
-			st.setFloat(3, factura.getSubTotal());
-			st.setFloat(4, factura.getValorTotal());
-			st.setFloat(5, factura.getDescuento());
-			st.setString(6, factura.getCredencialVendedor());
-			st.setString(7, factura.getIdentificacionCliente());
+			st.setFloat(1, factura.getSubTotal());
+			st.setFloat(2, factura.getValorTotal());
+			st.setFloat(3, factura.getDescuento());
+			st.setString(4, factura.getCredencialVendedor());
+			st.setString(5, factura.getIdentificacionCliente());
 			st.executeUpdate();
 			success1 = true;
 			
@@ -157,6 +155,103 @@ import Vendedor.Vendedores;
 		}
 		return success1;
 	}
+	
+	
+	public Facturas consultarFactura(String id) {
+
+		Connection conn = this.getConnection();
+	    String query = "SELECT * FROM factura WHERE id = ?";
+	    Facturas data = null;
+	    
+	    try {
+	        PreparedStatement st = conn.prepareStatement(query);
+	        st.setString(1, id);
+	        ResultSet res = st.executeQuery();
+	        
+	        if (res.next()) {
+	            data = new Facturas(res.getFloat(1), res.getString(2), res.getFloat(3), res.getFloat(4),res.getFloat(5), res.getString(6), res.getString(7));
+	        }
+	        
+	        conn.close(); // Cerrar la conexión después de su uso
+	    } catch (SQLException e) {
+	        System.out.println("Error al consultar factura");
+	       
+	    }
+	    
+	    return data;
+	}
+	
+	
+	public Clientes consultarClienteFactura(String id) {
+
+		Connection conn = this.getConnection();
+	    String query = "SELECT c.* FROM cliente c join factura f on c.identificacion=f.identificacionCliente WHERE f.id = ?";
+	    Clientes data = null;
+	    
+	    try {
+	        PreparedStatement st = conn.prepareStatement(query);
+	        st.setString(1, id);
+	        ResultSet res = st.executeQuery();
+	        
+	        if (res.next()) {
+	            data = new Clientes(res.getString(1), res.getString(2), res.getString(3), res.getString(4),res.getString(5), res.getString(6));
+	        }
+	        
+	        conn.close(); // Cerrar la conexión después de su uso
+	    } catch (SQLException e) {
+	        System.out.println("Error al consultar factura");
+	       
+	    }
+	    
+	    return data;
+	}
+	
+	
+	public Productos consultarProductosFactura(String referencia) {
+
+		Connection conn = this.getConnection();
+	    String query = "SELECT p.* FROM producto p join facturaProducto fp on p.referencia = fp.REFERENCIAPRODUCTO join factura f on fp.IDFACTURA = f.id  WHERE f.id = ?";
+	    Productos data = null;
+	    
+	    try {
+	        PreparedStatement st = conn.prepareStatement(query);
+	        st.setString(1, referencia);
+	        ResultSet res = st.executeQuery();
+	        
+	        if (res.next()) {
+	        	data = new Productos(res.getString(1), res.getFloat(2), res.getString(3), res.getString(4), res.getString(5), res.getFloat(6), res.getFloat(7), res.getString(8));
+	        }
+	        
+	        conn.close();
+	    } catch (SQLException e) {
+	        System.out.println("Error al consultar factura");
+	       
+	    }
+	    
+	    return data;
+	}
+	
+	
+	public boolean facturaProducto(FacturaProducto fp) {
+		Connection conn = this.getConnection();
+		String query = "INSERT INTO facturaProducto VALUES(f_idFacProd(),?,id_factura,?)";
+		boolean success1 = false;
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, fp.getId());
+			st.setInt(2, fp.getCantidad());
+			st.setString(3, fp.getIdFactura());
+			st.setString(4, fp.getReferenciaProducto());
+			success1 = true;
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return success1;
+	}
+	
 	
 	
 	
@@ -244,7 +339,7 @@ import Vendedor.Vendedores;
 			String query = "select * from producto";
 			ResultSet result = st.executeQuery(query);
 			while(result.next()) {
-				data.add(new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4), result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(8)));
+				data.add(new Productos(result.getString(1), result.getFloat(2), result.getString(3), result.getString(4) , result.getString(5), result.getFloat(6), result.getFloat(7), result.getString(0)));
 				
 			}
 		} catch (SQLException e) {
@@ -309,37 +404,7 @@ import Vendedor.Vendedores;
 		}
 		return success;
 		}
-	
-	
-	
-	
-	/**Metodo para actualizar los datos de los clientes
-	 * 
-	 * @param Cliente
-	 * @return success retorna un booleano
-	 */
-	public boolean updateCliente(Clientes Cliente) {
-		Connection conn = this.getConnection();
-		String query = "update cliente set Identificacion=?, Nombre=?, Apellido=?, FechaRegistro=?, Direccion=?, Telefono=?";
-		boolean success = false;
-		try {
-			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, Cliente.getIdentificacion());
-			st.setString(2, Cliente.getNombre());
-			st.setString(3, Cliente.getApellido());
-			st.setString(4, Cliente.getFechaRegistro());
-			st.setString(5, Cliente.getDireccion());
-			st.setString(6, Cliente.getTelefono());
-			st.executeUpdate();
-			success = true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return success;
-		}
-    
-	
+	    
 	
 	
 	/**Metodo para crear nuevos vendedores

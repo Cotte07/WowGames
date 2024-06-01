@@ -43,6 +43,7 @@ public class Productos {
 	 * @param valorUnitario
 	 * @param impuesto
 	 * @param plataforma
+	 * @param cantidad 
 	 */
 	public Productos (String referencia, float iva, String tipoProducto, String tipoJuego, String nombre, float valorUnitario, float impuesto, String plataforma) {
 		this.referencia = referencia;

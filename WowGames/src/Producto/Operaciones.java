@@ -2,22 +2,35 @@ package Producto;
 
 public class Operaciones {
 
-	Productos producto;
-	
-	private float iva; 
-	private float impuesto;
-	private int valorUnitario;
+	private Productos producto;
 	
 	public int total() {
 		
 		float total;
-		Productos producto = new Productos( null, iva, null, null, null, valorUnitario, impuesto, null);
 		
-		total= (int) ((((iva+impuesto)/100)+1)*valorUnitario);
+		total= (int) ((((producto.getIva()+producto.getImpuesto())/100)+1)*producto.getValorUnitario());
 		
 		return (int) total;
 
 	}
+	
+	
+	public float subTotal() {
+		
+		float subtotal;
+		
+		return subtotal= producto.getValorUnitario();
+	}
+
+	public Productos getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Productos producto) {
+		this.producto = producto;
+	}
+	
+	
 }
 
 
