@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import BaseDatos.Datos;
 import Cliente.Clientes;
+import Producto.ProductoFacturas;
 import Producto.Productos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -46,23 +47,23 @@ public class ventanaConsultaFacturaController implements Initializable{
 	@FXML
 	private TableColumn<Clientes, String> telefonoColumn;
 	@FXML
-	private TableView<Productos> tableProducto;
+	private TableView<ProductoFacturas> tableProducto;
 	@FXML
-    private TableColumn<Productos, Integer> CantidadColumn;
+    private TableColumn<ProductoFacturas, Integer> CantidadColumn;
 	@FXML
-    private TableColumn<Productos, String> nombreProductoColumn;
+    private TableColumn<ProductoFacturas, String> nombreProductoColumn;
 	@FXML
-	private TableColumn<Productos, Float> ivaColumn;
+	private TableColumn<ProductoFacturas, Float> ivaColumn;
 	@FXML
-	private TableColumn<Productos, String> plataformaColumn;
+	private TableColumn<ProductoFacturas, String> plataformaColumn;
 	@FXML
-	private TableColumn<Productos, String> tipoColumn;
+	private TableColumn<ProductoFacturas, String> tipoColumn;
 	@FXML
-	private TableColumn<Productos, String> tipoProductoColumn;
+	private TableColumn<ProductoFacturas, String> tipoProductoColumn;
 	@FXML
-	private TableColumn<Productos, Float> valorUnitarioColumn;
+	private TableColumn<ProductoFacturas, Float> valorUnitarioColumn;
 	@FXML
-	private TableColumn<Productos, Float> impuestoColumn;
+	private TableColumn<ProductoFacturas, Float> impuestoColumn;
 	@FXML
 	private TableView<Facturas> tableFactura;
 	@FXML
@@ -90,6 +91,7 @@ public class ventanaConsultaFacturaController implements Initializable{
 	private ObservableList<Facturas> data = FXCollections.observableArrayList();
 	private ObservableList<Clientes > data1 = FXCollections.observableArrayList();
 	private ObservableList<Productos > data2 = FXCollections.observableArrayList();
+	private ObservableList<ProductoFacturas> data3 = FXCollections.observableArrayList();
 
 
 
@@ -166,12 +168,11 @@ public class ventanaConsultaFacturaController implements Initializable{
 		}
 		
 		
-		Productos productos = dataProvider.consultarProductosFactura(idFacturaTxt.getText());
+		ProductoFacturas productosFacturas = dataProvider.consultarProductosFactura(idFacturaTxt.getText());
 				
-				if(productos.getReferencia() != null) {
-					this.data2.add(productos);
-					
-					this.tableProducto.setItems(data2);
+				if(productosFacturas.getReferencia() != null) {
+					this.data3.add(productosFacturas);
+					this.tableProducto.setItems(data3);
 					
 				}else {
 					Alert alt = new Alert(AlertType.ERROR);
@@ -179,7 +180,6 @@ public class ventanaConsultaFacturaController implements Initializable{
 					alt.setHeaderText("La factura no existe");
 					alt.show();
 				}
-		
 	}
 
 
@@ -201,14 +201,14 @@ public class ventanaConsultaFacturaController implements Initializable{
 		this.vendedorColumn.setCellValueFactory(new PropertyValueFactory<Facturas, String>("credencialVendedor"));
 		this.identificacionColumn.setCellValueFactory(new PropertyValueFactory<Facturas, String>("identificacionCliente"));
 		
-		this.CantidadColumn.setCellValueFactory(new PropertyValueFactory<Productos, Integer>("cantidad"));
-		this.nombreProductoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("nombre"));
-		this.ivaColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("iva"));
-		this.plataformaColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("plataforma"));
-		this.tipoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("tipoJuego"));
-		this.tipoProductoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("tipoProducto"));
-		this.valorUnitarioColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("valorUnitario"));
-		this.impuestoColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("impuesto"));
+		this.CantidadColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, Integer>("cantidad"));
+		this.nombreProductoColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, String>("nombre"));
+		this.ivaColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, Float>("iva"));
+		this.plataformaColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, String>("plataforma"));
+		this.tipoColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, String>("tipoJuego"));
+		this.tipoProductoColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, String>("tipoProducto"));
+		this.valorUnitarioColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, Float>("valorUnitario"));
+		this.impuestoColumn.setCellValueFactory(new PropertyValueFactory<ProductoFacturas, Float>("impuesto"));
 		
 	}
 }

@@ -158,11 +158,8 @@ public class ventanaAñadirProductoController implements Initializable{
 		this.valorColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("valorUnitario"));
 		this.impuestoColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("impuesto"));
 		this.plataformaColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("plataforma"));
-		LinkedList<Productos> temp = this.dataProvider.getDatos();
-		for(Productos item: temp) {
-			this.data.add(item);
-		}
-		this.tablaAñadirProducto.setItems(data);
+		
+		
 		
 	}
 	
@@ -172,20 +169,21 @@ public class ventanaAñadirProductoController implements Initializable{
 	 * @param event
 	 */
 	@FXML
-    void onConsultarClicked(MouseEvent event) {
+    public void onConsultarClicked(MouseEvent event) {
+	
+		Productos producto = dataProvider.consultarProducto(consultarReferenciaTxt.getText());
 
-		this.referenciaColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("referencia"));
-		this.ivaColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("iva"));
-		this.tipoProductoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("tipoProducto"));
-		this.tipoJuegoColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("tipoJuego"));
-		this.nombreColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("nombre"));
-		this.valorColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("valorUnitario"));
-		this.impuestoColumn.setCellValueFactory(new PropertyValueFactory<Productos, Float>("impuesto"));
-		this.plataformaColumn.setCellValueFactory(new PropertyValueFactory<Productos, String>("plataforma"));
-		LinkedList<Productos> temp = this.dataProvider.getDatos();
-		for(Productos item: temp) {
-			this.data.add(item);
+		try {
+		    if (producto.getReferencia() != null) {
+		        this.data.add(producto); // Agregar el producto a la lista
+		        
+		        this.tablaAñadirProducto.setItems(data);
+		       }
+		}catch (Exception e) {
+			// TODO: handle exception
 		}
-		this.tablaAñadirProducto.setItems(data);
-    }
+		
+	}
 }
+
+

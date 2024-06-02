@@ -12,9 +12,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -94,6 +96,11 @@ public class ventanaEliminarVendedorController {
 			Vendedores todelete = this.tablaEliminarCliente.getSelectionModel().getSelectedItem();
 			this.dataprovider.deleteVendedor(todelete);
 			this.data.remove(todelete);
+			
+			Alert alt = new Alert(AlertType.CONFIRMATION);
+			alt.setContentText("Borrado ");
+			alt.setHeaderText("se ha borrado el vendedor");
+			alt.show();
 		}
 	
 	// Event Listener on Button[#visualizarBtn].onMouseClicked

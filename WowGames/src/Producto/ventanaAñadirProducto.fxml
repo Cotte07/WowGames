@@ -44,9 +44,9 @@
               <columns>
                 <TableColumn fx:id="referenciaColumn" prefWidth="76.00000190734863" text="Referencia" />
                 <TableColumn fx:id="nombreColumn" prefWidth="139.33333587646484" text="Nombre" />
-                  <TableColumn fx:id="ivaColumn" prefWidth="26.000015258789062" text="Iva" />
-                  <TableColumn fx:id="tipoProductoColumn" prefWidth="87.3333740234375" text="Tipo Producto" />
-                  <TableColumn fx:id="impuestoColumn" prefWidth="62.0" text="Impuesto" />
+                  <TableColumn fx:id="ivaColumn" prefWidth="44.66670227050781" text="Iva" />
+                  <TableColumn fx:id="tipoProductoColumn" prefWidth="81.33331298828125" text="Tipo Producto" />
+                  <TableColumn fx:id="impuestoColumn" prefWidth="56.6666259765625" text="Impuesto" />
                   <TableColumn fx:id="tipoJuegoColumn" prefWidth="116.00009155273438" text="Tipo Juego" />
                   <TableColumn fx:id="valorColumn" prefWidth="80.6666259765625" text="Valor" />
                   <TableColumn fx:id="plataformaColumn" prefWidth="99.33331298828125" text="Plataforma" />

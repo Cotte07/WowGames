@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import Cliente.Clientes;
 import Facturas.FacturaProducto;
 import Facturas.Facturas;
+import Producto.ProductoFacturas;
 import Producto.Productos;
 import Vendedor.Vendedores;
 
@@ -207,11 +208,11 @@ import Vendedor.Vendedores;
 	}
 	
 	
-	public Productos consultarProductosFactura(String referencia) {
+	public ProductoFacturas consultarProductosFactura(String referencia) {
 
 		Connection conn = this.getConnection();
-	    String query = "SELECT p.* FROM producto p join facturaProducto fp on p.referencia = fp.REFERENCIAPRODUCTO join factura f on fp.IDFACTURA = f.id  WHERE f.id = ?";
-	    Productos data = null;
+	    String query = "SELECT p.*, fp.cantidad FROM producto p join facturaProducto fp on p.referencia = fp.REFERENCIAPRODUCTO join factura f on fp.IDFACTURA = f.id  WHERE f.id = ?";
+	    ProductoFacturas data = null;
 	    
 	    try {
 	        PreparedStatement st = conn.prepareStatement(query);
@@ -219,12 +220,13 @@ import Vendedor.Vendedores;
 	        ResultSet res = st.executeQuery();
 	        
 	        if (res.next()) {
-	        	data = new Productos(res.getString(1), res.getFloat(2), res.getString(3), res.getString(4), res.getString(5), res.getFloat(6), res.getFloat(7), res.getString(8));
+	        	
+	        	data = new ProductoFacturas(res.getString(1), res.getFloat(2), res.getString(3), res.getString(4), res.getString(5), res.getFloat(6), res.getFloat(7), res.getString(8), res.getInt(9));
 	        }
 	        
 	        conn.close();
 	    } catch (SQLException e) {
-	        System.out.println("Error al consultar factura");
+	        System.out.println("Error al consultar productos");
 	       
 	    }
 	    
@@ -234,14 +236,14 @@ import Vendedor.Vendedores;
 	
 	public boolean facturaProducto(FacturaProducto fp) {
 		Connection conn = this.getConnection();
-		String query = "INSERT INTO facturaProducto VALUES(f_idFacProd(),?,id_factura,?)";
+		String query = "INSERT INTO facturaProducto (id, cantidad, idFactura, referenciaProducto) "
+				+ "VALUES(f_idFacProd(),?,f_id_factura(),?)";
 		boolean success1 = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, fp.getId());
-			st.setInt(2, fp.getCantidad());
-			st.setString(3, fp.getIdFactura());
-			st.setString(4, fp.getReferenciaProducto());
+			st.setInt(1, fp.getCantidad());
+			st.setString(2, fp.getReferenciaProducto());
+			st.executeUpdate();
 			success1 = true;
 			
 			
@@ -252,8 +254,7 @@ import Vendedor.Vendedores;
 		return success1;
 	}
 	
-	
-	
+
 	
 	/**Metodo que busca el id que sea mayor entre las facturas para automatizar el generar los id 
 	 * 
@@ -377,33 +378,45 @@ import Vendedor.Vendedores;
 	
 	
 	
+	public boolean deleteFacturaProducto(FacturaProducto fp) {
+		Connection conn = this.getConnection();
+		String query = "delete from facturaProducto where idFactura= ? ";
+		boolean succes = false;
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, fp.getId());
+			st.executeUpdate();
+			succes = true;
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return succes;
+	}
+	
+	public boolean deleteFacura(Facturas facturas) {
+		Connection conn = this.getConnection();
+		String query = "delete from factura where id = ?";
+		boolean succes = false;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setFloat(1, facturas.getId());
+			st.executeUpdate();
+			succes = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return succes;
+	}
+	
+	
 	
 	/**Metodo para actualizar los datos de los productos con el numero de referencia
 	 * 
 	 * @param producto
 	 * @return success retorna un booleano
 	 */
-	public boolean modificarProducto(Productos producto) {
-		Connection conn = this.getConnection();
-		String query = "update producto set iva=?, tipoProducto=?, tipoJuego=?, nombre=?, valorUnitario=?, impuesto=?, platorma=? where referencia=?";
-		boolean success = false;
-		try {
-			PreparedStatement st = conn.prepareStatement(query);
-			st.setFloat(1, producto.getIva());
-			st.setString(2, producto.getTipoProducto());
-			st.setString(3, producto.getTipoJuego());
-			st.setString(4, producto.getNombre());
-			st.setFloat(5, producto.getValorUnitario());
-			st.setFloat(6, producto.getImpuesto());
-			st.setString(7, producto.getPlataforma());
-			st.executeUpdate();
-			success = true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return success;
-		}
 	    
 	
 	
@@ -414,7 +427,7 @@ import Vendedor.Vendedores;
 	 */
 	public boolean createVendedor (Vendedores vendedor) {
 		Connection conn = this.getConnection();
-		String query = "INSERT INTO vendedor VALUES(?,?,?,?,?,?)";
+		String query = "INSERT INTO vendedor VALUES(?,?,?,?,sysdate,?)";
 		boolean successAñadirVendedor = false;
 		try {
 			PreparedStatement st = conn.prepareStatement(query);
@@ -422,8 +435,7 @@ import Vendedor.Vendedores;
 			st.setString(2, vendedor.getIdentificacion());
 			st.setString(3, vendedor.getNombre());
 			st.setString(4, vendedor.getApellido());
-			st.setString(5, vendedor.getFechaIngreso());
-			st.setString(6, vendedor.getContrasena());
+			st.setString(5, vendedor.getContrasena());
 			st.executeUpdate();
 			successAñadirVendedor = true;
 
@@ -436,7 +448,31 @@ import Vendedor.Vendedores;
 
 		return successAñadirVendedor;
 	}
+
 	
+	public Vendedores consultarVendedor(String id) {
+
+		Connection conn = this.getConnection();
+	    String query = "SELECT * FROM vendedor WHERE credencial = ?";
+	    Vendedores data = null;
+	    
+	    try {
+	        PreparedStatement st = conn.prepareStatement(query);
+	        st.setString(1, id);
+	        ResultSet res = st.executeQuery();
+	        
+	        if (res.next()) {
+	            data = new Vendedores(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6));
+	        }
+	        
+	        conn.close(); // Cerrar la conexión después de su uso
+	    } catch (SQLException e) {
+	        System.out.println("Error al consultar vendedor desde BD");
+	       
+	    }
+	    
+	    return data;
+	}
 	
 	
 	/**Medodo para mostrar los datos de los vendedores

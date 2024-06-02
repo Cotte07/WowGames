@@ -169,7 +169,7 @@ public class ventanaRegistrarFacturaController implements Initializable{
 	            
 		        valorTotalFactura += producto.getTotal();
 		        
-		        subtotal += op.subTotal();
+		        subtotal += op.subTotal();	
 	            
 	            totalFactura = Float.toString(valorTotalFactura);
 	            valorTotalLabel.setText(totalFactura);
@@ -253,6 +253,28 @@ public class ventanaRegistrarFacturaController implements Initializable{
             
         	validar += 1; 
         	
+        	int cantidadProducto;
+            cantidadProducto =Integer.parseInt(cantidadTxt.getText());
+            
+            String idFactura = null;
+            
+            String idf = null;
+            
+            
+            FacturaProducto fp = new FacturaProducto(idf, cantidadProducto, idFactura, codigoProductoTxt.getText());
+            boolean succesFacturaProducto = this.dataProvider.facturaProducto(fp);
+
+            if(succesFacturaProducto) {
+            	validar += 1;
+            }else {
+    			Alert alt = new Alert(Alert.AlertType.ERROR);
+    			alt.setContentText("Error creando la factura: fp");
+    			alt.setHeaderText("error");
+    			alt.show();	
+            }
+        	
+        	
+        	
         } else {
 			Alert alt = new Alert(Alert.AlertType.ERROR);
 			alt.setContentText("Error creando la factura: f");
@@ -260,26 +282,6 @@ public class ventanaRegistrarFacturaController implements Initializable{
 			alt.show();
 		
 	}
-        int cantidadProducto;
-        cantidadProducto =Integer.parseInt(cantidadTxt.getText());
-        
-        String idFactura = null;
-        
-        int idfacturaProducto = 0;
-        String idf = null;
-        
-        
-        FacturaProducto fp = new FacturaProducto(idf, cantidadProducto, idFactura, codigoProductoTxt.getText());
-        boolean succesFacturaProducto = this.dataProvider.facturaProducto(fp);
-
-        if(succesFacturaProducto) {
-        	validar += 1;
-        }else {
-			Alert alt = new Alert(Alert.AlertType.ERROR);
-			alt.setContentText("Error creando la factura: fp");
-			alt.setHeaderText("error");
-			alt.show();	
-        }
 
         if(validar == 3) {
         	Alert alt = new Alert(AlertType.CONFIRMATION);

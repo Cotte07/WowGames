@@ -6,28 +6,26 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.ventanaOpcionesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="600.0" style="-fx-background-color: #5A1087;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentacion.ventanaOpcionesController">
    <center>
-      <AnchorPane prefHeight="377.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="299.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="360.0" layoutX="12.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" width="573.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="236.0" layoutY="55.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            <Label layoutX="250.0" layoutY="64.0" text="¿Que desea hacer?" textFill="WHITE" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="54.0" layoutY="132.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="251.0" layoutY="132.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="439.0" layoutY="132.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
-            <Label layoutX="76.0" layoutY="140.0" text="Productos" textFill="WHITE" />
-            <Label layoutX="268.0" layoutY="140.0" text="Vendedores" textFill="WHITE" />
-            <Label layoutX="464.0" layoutY="140.0" text="Analitica" textFill="WHITE" />
-            <Button fx:id="añadirProductoBtn" layoutX="48.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#onAñadirProductoClicked" prefHeight="25.0" prefWidth="115.0" text="Añadir/Consultar " />
-            <Button fx:id="modificarProductoBtn" layoutX="49.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#onModificarProductoClicked" prefHeight="25.0" prefWidth="113.0" text="Modificar" />
-            <Button fx:id="eliminarProductoBtn" layoutX="48.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#onEliminarProductoClicked" prefHeight="25.0" prefWidth="114.0" text="Eliminar" />
-            <Button fx:id="añadirVendedor" layoutX="240.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#onAñadirVendedorClicked" prefHeight="25.0" prefWidth="123.0" text="Añadir " />
-            <Button fx:id="consultarVendedorBtn" layoutX="240.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#onConsultarVendedorClicked" prefHeight="25.0" prefWidth="123.0" text="Consultar " />
-            <Button fx:id="eliminarVendedorBtn" layoutX="240.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#onEliminarVendedorClicked" prefHeight="25.0" prefWidth="123.0" text="Eliminar" />
-            <Button fx:id="ventasPorProductoBtn" layoutX="420.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#onVentasPorProductoClicked" prefHeight="25.0" prefWidth="135.0" text="Ventas Por Producto" wrapText="true" />
-            <Button fx:id="comisionesBtn" layoutX="420.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#onComisionesClicked" prefHeight="25.0" prefWidth="135.0" text="Ver Comisiones" />
-            <Button fx:id="btnRegresar" layoutX="500.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white;" text="Regresar" textFill="#200357" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#258b70" height="254.0" layoutX="13.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="573.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="237.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
+            <Label layoutX="251.0" layoutY="57.0" text="¿Que desea hacer?" textFill="WHITE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="55.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="252.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5a1087" height="34.0" layoutX="440.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+            <Label layoutX="77.0" layoutY="133.0" text="Productos" textFill="WHITE" />
+            <Label layoutX="269.0" layoutY="133.0" text="Vendedores" textFill="WHITE" />
+            <Label layoutX="465.0" layoutY="133.0" text="Analitica" textFill="WHITE" />
+            <Button fx:id="añadirProductoBtn" layoutX="49.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#onAñadirProductoClicked" prefHeight="25.0" prefWidth="115.0" text="Añadir/Consultar " />
+            <Button fx:id="eliminarProductoBtn" layoutX="50.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#onEliminarProductoClicked" prefHeight="25.0" prefWidth="114.0" text="Eliminar" />
+            <Button fx:id="añadirVendedor" layoutX="241.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#onAñadirVendedorClicked" prefHeight="25.0" prefWidth="123.0" text="Añadir/Consultar" />
+            <Button fx:id="eliminarVendedorBtn" layoutX="241.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#onEliminarVendedorClicked" prefHeight="25.0" prefWidth="123.0" text="Eliminar" />
+            <Button fx:id="ventasPorProductoBtn" layoutX="421.0" layoutY="169.0" mnemonicParsing="false" onMouseClicked="#onVentasPorProductoClicked" prefHeight="25.0" prefWidth="135.0" text="Ventas Por Producto" wrapText="true" />
+            <Button fx:id="comisionesBtn" layoutX="420.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#onComisionesClicked" prefHeight="25.0" prefWidth="135.0" text="Ver Comisiones" />
+            <Button fx:id="btnRegresar" layoutX="501.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#onRegresarClicked" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white;" text="Regresar" textFill="#200357" />
          </children>
       </AnchorPane>
    </center>

@@ -45,7 +45,8 @@ public class Productos {
 	 * @param plataforma
 	 * @param cantidad 
 	 */
-	public Productos (String referencia, float iva, String tipoProducto, String tipoJuego, String nombre, float valorUnitario, float impuesto, String plataforma) {
+	public Productos (String referencia, float iva, String tipoProducto, String tipoJuego, 
+			String nombre, float valorUnitario, float impuesto, String plataforma) {
 		this.referencia = referencia;
 		this.nombre = nombre; 
 		this.iva = iva;
